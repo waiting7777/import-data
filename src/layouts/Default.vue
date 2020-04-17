@@ -1,27 +1,28 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+    <div id="content-wrapper">
+      <Header />
+      <slot/>
+    </div>
+    <Footer />
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
+<script>
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+export default {
+  components: {
+    Header, Footer
   }
 }
-</static-query>
+</script>
 
-<style>
+<style lang="scss">
+body, html {
+  height: 100%;
+}
+
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
@@ -29,22 +30,16 @@ body {
   line-height: 1.5;
 }
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
+#app {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+  flex-direction: column;
+  height: 100%;
 }
 
-.nav__link {
-  margin-left: 20px;
+#content-wrapper {
+  flex: 1 0 auto;
+  max-width: 950px;
+  width: 90vw;
+  margin: 0 auto;
 }
 </style>
