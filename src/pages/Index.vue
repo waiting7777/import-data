@@ -9,7 +9,7 @@
 <page-query>
 
 query($page:Int) {
-  entries: allBlog(perPage: 9, page: $page) @paginate {
+  entries: allBlog(perPage: 10, page: $page) @paginate {
     totalCount,
     pageInfo {
       totalPages
@@ -58,6 +58,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 4rem 0;
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 </style>
 
