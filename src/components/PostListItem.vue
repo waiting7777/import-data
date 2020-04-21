@@ -22,6 +22,7 @@
                       :src="author.image"
                       :alt="author.name"
                       class="post-card-avatars-image"
+                      v-b-tooltip.hover :title="author.name"
                     />
                   </g-link>
                 </li>

@@ -1,7 +1,7 @@
 ---
 id: author1
-name: Troes retardat
-bio: Primis vitae mauris turpis ornare libero odio torquent vehicula proin consequat curabitur mattis
+name: Waiting7777
+bio: Senior Frontend Engineer, Gamer
 facebook: https://www.facebook.com
 twitter: https://www.twitter.com
 linkedin: https://www.linkedin.com
