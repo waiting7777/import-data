@@ -20,6 +20,9 @@ export default {
 
 <style lang="scss">
 .container {
-  max-width: 1056px !important;
+  padding-top: 6rem;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 1024px !important;
 }
 </style>

@@ -27,6 +27,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
 }
 
 .logo-image {

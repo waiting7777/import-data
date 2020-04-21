@@ -152,7 +152,6 @@ export default {
     border: 2px solid #fff;
     border-radius: 9999px;
     background-color: #edf2f7;
-    max-width: 100%;
   }
 }
 </style>
