@@ -1,10 +1,8 @@
 <template>
-  <div class="layout">
-    <Header />
-    <div class="container">
-      <slot/>
-    </div>
-    <Footer />
+  <div id="app" dark>
+    <!-- <Header /> -->
+    <slot/>
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -18,11 +16,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.container {
-  padding-top: 6rem;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  max-width: 1024px !important;
-}
-</style>

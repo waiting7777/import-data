@@ -2,12 +2,15 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-import BootstraoVue from 'bootstrap-vue'
+import VTooltip from 'v-tooltip'
 
-import './assets/styles/main.scss';
+import '~/assets/styles/main.scss';
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  Vue.use(BootstraoVue)
   Vue.component('Layout', DefaultLayout)
+  Vue.use(VTooltip, {
+    defaultPlacement: 'top-end',
+    defaultClass: 'bg-black text-xs px-2 leading-normal py-1 rounded absolute text-gray-400 max-w-xs mb-1'
+  })
 }

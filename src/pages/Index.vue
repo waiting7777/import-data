@@ -1,7 +1,9 @@
 <template>
   <Layout>
-    <div class="main">
-      <PostListItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
+      <div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4">
+        <PostListItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
+      </div>
     </div>
   </Layout>
 </template>
@@ -53,13 +55,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 4rem 0;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-</style>
 

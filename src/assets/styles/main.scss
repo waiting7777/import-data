@@ -1,108 +1,195 @@
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@tailwind base;
 
-$blue: #2b6cb0;
-$gray: #4a5568;
+blockquote {
+  @apply border-l;
+  @apply border-l-4;
+  @apply border-l-blue-500;
+  @apply pl-4;
+  @apply italic;
+  @apply my-8;
 
-p {
-  margin-bottom: 0 !important;
-}
-
-a {
-  color: inherit;
-
-  &:hover {
-    color: inherit;
-    text-decoration: none;
+  p {
+    padding: 0 !important;
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+pre {
+  @apply border-l;
+  @apply border-l-2;
+  @apply border-l-gray-500;
+  @apply pl-4;
+  @apply mt-4;
+  @apply text-base;
+  @apply break-words;
+  @apply overflow-x-auto;
 }
 
-h1 {
-  margin-bottom: 1rem;
+ol {
+  @apply list-decimal;
+  @apply ml-5;
 }
 
-.list-none {
-  list-style-type: none;
+ul {
+  @apply list-disc;
+  @apply ml-5;
 }
 
-.text-5xl {
-  font-size: 3rem;
+:not(pre)>code {
+  @apply text-red-600;
+  @apply text-base;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-}
+@tailwind components;
 
-.text-xs {
-  font-size: .75rem;
-}
+@tailwind utilities;
 
-.text-sm {
-  font-size: .875rem;
-}
-
-.text-blue {
-  color: $blue;
-}
-
-.text-gray {
-  color: $gray;
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.leading-none {
-  line-height: 1;
-}
-
-.tracking-wide {
-  letter-spacing: .025em;
-}
-
-.default\:mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.default\:px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-  .sm\:px-0 {
-    padding-left: 0;
-    padding-right: 0;
+@responsive {
+  .pxi-0 {
+    @apply px-0 #{!important};
   }
 
-  .sm\:mx-8 {
-    margin-left: 2rem;
-    margin-right: 2rem;
+  .pyi-0 {
+    @apply py-0 #{!important};
   }
+
+  .pi-0 {
+    @apply p-0 #{!important};
+  }
+}
+
+.animated-link:after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  transition: 300ms;
+  @apply bg-gray-500;
+}
+
+.animated-link:hover:after {
+  width: 100%;
+}
+
+.height-30px {
+  height:30px;
+}
+
+.no-border {
+  border-width: 0px !important;
+}
+
+.flex-post {
+  @apply border-b;
+  @apply border-b-gray-300;
+  @apply flex-col;
+  @apply w-full;
+
+  .post-card-image {
+    @apply h-56;
+    @apply w-full;
+    @apply object-cover;
+    @apply rounded;
+    @apply relative;
+  }
+
+  .post-card-title {
+    min-height: 48px;
+    @apply leading-none;
+    @apply text-2xl;
+    @apply font-medium;
+  }
+
+  .post-card-excerpt {
+    @apply font-serif;
+  }
+}
+
+.author-list-item:nth-child(n+2) {
+  @apply -ml-3
 }
 
 @media (min-width: 768px) {
-  .md\:mx-16 {
-    margin-left: 4rem;
-    margin-right: 4rem;
+  .with-large>.flex-post:nth-child(6n+1) {
+    @apply flex-100;
+    @apply flex-row;
+
+    .post-card-image-link {
+      @apply flex-auto;
+      @apply relative;
+      min-height: 380px;
+      @apply mr-6;
+    }
+
+    .post-card-image {
+      @apply absolute;
+      @apply h-full;
+      @apply w-full;
+      @apply object-cover;
+      @apply rounded-lg;
+    }
+
+    .post-card-content {
+      @apply flex-post-large-content;
+      @apply self-center
+    }
+
+      .post-card-title {
+        @apply text-4xl;
+      }
+
+      .post-card-excerpt {
+        @apply text-xl;
+      }
   }
+
 }
 
-@media (min-width: 1024px) {
-  .lg\:mx-32 {
-    margin-left: 8rem;
-    margin-right: 8rem;
-  }
-}
+body[data-theme="dark"] {
+  
+    background-color: #191b1f;
+    @apply text-gray-300;
 
+    .post-content-text {
+      @apply text-gray-300;
+    }
+
+    .post-card-excerpt {
+      @apply text-gray-500;
+    }
+
+    .pagination li {
+      @apply bg-gray-700;
+      @apply text-gray-200;
+      @apply border-gray-600;
+
+      &:hover {
+        @apply bg-gray-600;
+        @apply text-gray-900;
+      }
+    }
+
+    .pagination li.border-l-black {
+      @apply border-l-gray-300;
+    }
+
+    pre {
+      @apply text-gray-500;
+    }
+
+    .flex-post {
+      @apply border-b-gray-800;
+    }
+
+    .author-list-item img {
+      border-color: #191b1f;
+    }
+
+    .author-social {
+      a {
+        &:hover {
+          @apply text-white
+        }
+      }
+    }
+
+}
