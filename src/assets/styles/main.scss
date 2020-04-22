@@ -130,7 +130,8 @@ ul {
 
     .post-card-content {
       @apply flex-post-large-content;
-      @apply self-center
+      @apply self-center;
+      height: auto;
     }
 
       .post-card-title {
@@ -142,6 +143,9 @@ ul {
       }
   }
 
+  .post-card-content {
+    height: 100%;
+  }
 }
 
 body[data-theme="dark"] {
