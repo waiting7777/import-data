@@ -37,12 +37,12 @@
           </div>
         </section>
       </div>
-      <section class="post-image mx-auto w-full">
+      <section class="post-image mx-auto w-full mb-10">
         <g-image :src="$page.blog.image"></g-image>
       </section>
       <div class="lg:mx-32 md:mx-16 px-4 sm:px-0">
         <section class="post-content container mx-auto relative font-serif text-gray-700">
-          <div class="post-content-text text-xl" v-html="$page.blog.content"></div>
+          <div class="post-content-text text-xl markdown-body" v-html="$page.blog.content"></div>
         </section>
         <section class="post-tags container mx-auto relative py-10">
           <g-link v-for="tag in $page.blog.tags" :key="tag.id" :to="tag.path" class="text-xs bg-transparent hover:text-blue-700 py-2 px-4 mr-2 border hover:border-blue-500 border-gray-600 text-gray-700 rounded-full">

@@ -1,17 +1,18 @@
 <template>
   <div id="app" dark>
-    <!-- <Header /> -->
+    <NavbarPartial />
     <slot/>
     <!-- <Footer /> -->
   </div>
 </template>
 
 <script>
+import NavbarPartial from '~/layouts/partials/Navbar.vue'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 export default {
   components: {
-    Header, Footer
+    NavbarPartial, Footer
   }
 }
 </script>

@@ -12,6 +12,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import 'github-markdown-css/github-markdown.css';
 
 config.autoAddCss = false
 library.add(fas)
