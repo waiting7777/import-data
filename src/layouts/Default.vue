@@ -2,17 +2,16 @@
   <div id="app" dark>
     <NavbarPartial />
     <slot/>
-    <!-- <Footer /> -->
+    <FooterPartial />
   </div>
 </template>
 
 <script>
 import NavbarPartial from '~/layouts/partials/Navbar.vue'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import FooterPartial from '~/layouts/partials/Footer.vue'
 export default {
   components: {
-    NavbarPartial, Footer
+    NavbarPartial, FooterPartial
   }
 }
 </script>
