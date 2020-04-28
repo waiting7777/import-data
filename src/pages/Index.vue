@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <Hero />
     <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="flex flex-wrap with-large pt-16 pb-16 mx-4 sm:-mx-4">
         <PostListItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
@@ -45,12 +46,14 @@ query($page:Int) {
 
 <script>
 import PostListItem from '~/components/PostListItem.vue'
+import Hero from '~/components/Hero.vue'
 export default {
   metaInfo: {
     title: 'Import Data'
   },
   components: {
-    PostListItem
+    PostListItem,
+    Hero
   }
 }
 </script>
