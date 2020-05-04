@@ -4,7 +4,7 @@
       <div class="block flex-grow flex items-center w-auto">
         <g-link to="/">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <font-awesome :icon="['fas', 'ghost']" class="mr-3"></font-awesome>
+            <font-awesome :icon="['fas', 'dragon']" class="mr-3"></font-awesome>
             <span class="font-semibold text-xl tracking-tight">Import Data</span>
           </div>
         </g-link>
@@ -20,6 +20,9 @@
         </div>
         <div class="inline-block text-gray-400">
           <ul class="list-none flex justify-center md:justify-end">
+            <li class="hover:text-white hidden sm:block mr-6 text-md">
+              <span>Waiting7777</span>
+            </li>
             <li class="hover:text-white hidden sm:block mr-6 text-md">
               <span>
                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

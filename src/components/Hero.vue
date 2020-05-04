@@ -1,7 +1,8 @@
 <template>
   <section class="masthead">
     <div class="hero-title">Import Data</div>
-    <div class="hero-sub-title text-xl text-gray-400 mb-4">Focus on Coding, Card Gaming</div>
+    <div class="hero-sub-title text-xl text-gray-400 mb-4">Never perfect. Perfection goal that changes. Never stops moving. Can chase, cannot catch.</div>
+    <div class="hero-sub-title text-xl text-gray-400 mb-4">從來沒有完美。完美是變動的目標，從未停止，能夠追求，但永遠達不到。<span class="italic">~ 阿巴瑟</span></div>
   </section>
 </template>
 
