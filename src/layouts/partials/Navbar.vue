@@ -21,7 +21,11 @@
         <div class="inline-block text-gray-400">
           <ul class="list-none flex justify-center md:justify-end">
             <li class="hover:text-white hidden sm:block mr-6 text-md">
-              <span>Waiting7777</span>
+              <span>
+                <g-link to="/about">
+                  Waiting7777
+                </g-link>
+              </span>
             </li>
             <li class="hover:text-white hidden sm:block mr-6 text-md">
               <span>

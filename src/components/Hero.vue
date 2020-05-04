@@ -8,7 +8,6 @@
 
 <style lang="scss" scoped>
   .masthead {
-    margin-top: 64px;
     display: flex;
     justify-content: center;
     align-items: center;

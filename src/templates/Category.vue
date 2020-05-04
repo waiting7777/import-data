@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
+    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
       <div class="mx-4 sm:mx-0">
         <h1 class="pb-0 mb-0 text-5xl font-medium">{{ $page.category.title }}</h1>
         <p class="text-gray-700 text-xl">
