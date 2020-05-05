@@ -17,7 +17,25 @@
       </div>
       <hr class="my-8" />
       <div>
-        <h4>Works</h4>
+        <div class="w-full">
+          <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" @click="changeTab">
+                <font-awesome :icon="['fas', 'dragon']" class="mr-3" /> Profile
+              </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" @click="changeTab">
+                <i class="fas fa-cog text-base mr-1"></i> Settings
+              </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" @click="changeTab">
+                <i class="fas fa-briefcase text-base mr-1"></i> Options
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </Layout>
@@ -27,6 +45,11 @@
 export default {
   metaInfo: {
     title: 'About us'
+  },
+  methods: {
+    changeTab() {
+      console.log(123)
+    }
   }
 }
 </script>
