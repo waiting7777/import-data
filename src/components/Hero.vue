@@ -14,7 +14,7 @@
     flex-direction: column;
     text-align: center;
     width: 100%;
-    height: 35vh; /* if you don't want it to take up the full screen, reduce this number */
+    height: 40vh; /* if you don't want it to take up the full screen, reduce this number */
     overflow: hidden;
     background-size: cover;
     background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 49%, rgba(0,0,0,0.65) 100%), url('/images/hero.png') no-repeat center center scroll;

@@ -5,7 +5,7 @@
         <div class="col-span-5">
           <div class="text-2xl font-bold">Hi, I'm Waiting7777</div>
           <br/>
-          <p>I'm a <span class="text-blue-500">Frontend Engineer</span>, play hard with <span class="text-yellow-500">Javascript</span>, <span class="text-green-500">Vue</span>, <span class="text-orange-500">D3</span>, <span class="text-pink-500">Phaser</span> for performance and Infographic, Also know about <span class="text-purple-500">Blockchain</span> knowledge with previous job, And Card & Chess Gamer, such as MTG, Hearthstone, Teamfight Tactic.</p>
+          <p>I'm a <span class="text-blue-500">Frontend Engineer</span>, play hard with <span class="text-teal-500">Data Visualization</span>, <span class="text-yellow-500">Javascript</span>, <span class="text-green-500">Vue</span>, <span class="text-orange-500">D3</span>, <span class="text-pink-500">Phaser</span> for performance and Infographic, Also know about <span class="text-purple-500">Blockchain</span> knowledge with previous job, And Card & Chess Gamer, such as MTG, Hearthstone, Teamfight Tactic.</p>
           <br/>
           <br/>
           <p>
@@ -14,6 +14,10 @@
           </p>
         </div>
         <div class="col-span-3">456</div>
+      </div>
+      <hr class="my-8" />
+      <div>
+        <h4>Works</h4>
       </div>
     </div>
   </Layout>
