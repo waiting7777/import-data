@@ -18,25 +18,26 @@
       <hr class="my-8" />
       <div>
         <div class="w-full">
-          <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <div class="grid grid-cols-3 gap-3 cursor-pointer">
+            <div class="text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-white bg-pink-600" @click="changeTab">
                 <font-awesome :icon="['fas', 'dragon']" class="mr-3" /> Profile
               </a>
-            </li>
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            </div>
+            <div class="text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" @click="changeTab">
-                <i class="fas fa-cog text-base mr-1"></i> Settings
+                <font-awesome :icon="['fas', 'dragon']" class="mr-3" /> Profile
               </a>
-            </li>
-            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+            </div>
+            <div class="text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal text-pink-600 bg-white" @click="changeTab">
-                <i class="fas fa-briefcase text-base mr-1"></i> Options
+                <font-awesome :icon="['fas', 'dragon']" class="mr-3" /> Profile
               </a>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
+      <hr class="my-8">      
     </div>
   </Layout>
 </template>
