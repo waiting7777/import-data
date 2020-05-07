@@ -1,6 +1,6 @@
 <template>
   <nav class="relative bg-black py-4 text-sm text-gray-500">
-    <div class="container mx-auto flex flex-wrap justify-between h-12 items-center">
+    <div class="container mx-auto flex flex-wrap justify-between h-8 items-center">
       <div class="w-full md:w-1/2 text-center md:text-left h-4 leading-none">
         Copyright <font-awesome :icon="['far', 'copyright']" /> 2020 | Design by <g-link to="/about" target="_blank" class="hover:text-white">Waiting7777</g-link> 
       </div>

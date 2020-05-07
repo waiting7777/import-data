@@ -16,15 +16,14 @@
     width: 100%;
     height: 40vh; /* if you don't want it to take up the full screen, reduce this number */
     overflow: hidden;
-    background-size: cover;
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 49%, rgba(0,0,0,0.65) 100%), url('/images/hero.png') no-repeat center center scroll;
+    background: #000;
   }
 
   .hero-title {
     font-style: normal;
     font-weight: bold;
     color: #eee;
-    font-size: 10vmin;
+    font-size: 9vmin;
     letter-spacing: 0.03em;
     line-height: 1;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);

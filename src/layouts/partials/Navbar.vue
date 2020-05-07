@@ -1,6 +1,6 @@
 <template>
-  <div class="fixed inset-0 h-16 bg-black z-50">
-    <nav class="flex items-center justify-between flex-wrap container mx-auto px-4 sm:px-0 py-4">
+  <div class="sticky inset-0 h-12 bg-black z-50">
+    <nav class="flex items-center justify-between flex-wrap container mx-auto px-2 sm:px-0 py-2">
       <div class="block flex-grow flex items-center w-auto">
         <g-link to="/">
           <div class="flex items-center flex-shrink-0 text-white mr-6">
