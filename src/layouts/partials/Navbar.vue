@@ -29,22 +29,22 @@
             </li>
             <li class="hover:text-white hidden sm:block mr-6 text-md">
               <span>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'facebook']" />
+                <a href="https://www.twitter.com/waiting7777" target="_blank" rel="noopener noreferrer">
+                  <font-awesome :icon="['fab', 'twitter']" />
                 </a>
               </span>
             </li>
             <li class="hover:text-white hidden sm:block mr-6 text-md">
               <span>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'twitter']" />
+                <a href="https://www.github.com/waiting7777" target="_blank" rel="noopener noreferrer">
+                  <font-awesome :icon="['fab', 'github']" />
                 </a>
               </span>
             </li>
-            <li class="hover:text-white hidden sm:block text-md">
+            <li class="hover:text-white hidden sm:block mr-6 text-md">
               <span>
-                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'github']" />
+                <a href="https://www.twitch.com/waiting7777" target="_blank" rel="noopener noreferrer">
+                  <font-awesome :icon="['fab', 'twitch']" />
                 </a>
               </span>
             </li>
