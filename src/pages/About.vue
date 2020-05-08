@@ -146,7 +146,7 @@
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg card">
               <a href="https://udn.com/upf/newmedia/2016_data/20160704_middlecross/index.html" target="_blank">
-                <img class="w-full shadow-md" src="http://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross">
+                <img class="w-full shadow-md" src="https://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross">
               </a>
               <div class="px-6 pt-4">
                 <div class="font-bold text-xl mb-2 whitespace-no-wrap">中橫走過一甲子 192公里的淚與笑</div>
