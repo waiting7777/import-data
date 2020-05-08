@@ -13,22 +13,32 @@
             <span>·</span>
             <span>
               <a
-                :href="$page.author.facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-gray-400 hover:text-black"
-              >
-                <font-awesome :icon="['fab', 'facebook']" />
-              </a>
-            </span>
-            <span>
-              <a
                 :href="$page.author.twitter"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-black"
               >
                 <font-awesome :icon="['fab', 'twitter']" />
+              </a>
+            </span>
+            <span>
+              <a
+                :href="$page.author.github"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-black"
+              >
+                <font-awesome :icon="['fab', 'github']" />
+              </a>
+            </span>
+            <span>
+              <a
+                :href="$page.author.twitch"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-black"
+              >
+                <font-awesome :icon="['fab', 'twitch']" />
               </a>
             </span>
             <span>
@@ -72,8 +82,9 @@
       path
       bio
       image(width:150, height:150)
-      facebook
       twitter
+      github
+      twitch
       linkedin
       belongsTo(perPage: 5, page: $page) @paginate {
         totalCount

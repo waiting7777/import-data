@@ -48,6 +48,13 @@
                 </a>
               </span>
             </li>
+            <li class="hover:text-white hidden sm:block text-md">
+              <span>
+                <a href="https://www.linkedin.com/in/weiting-cheng-34a697127/" target="_blank" rel="noopener noreferrer">
+                  <font-awesome :icon="['fab', 'linkedin']" />
+                </a>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
