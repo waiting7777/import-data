@@ -36,128 +36,135 @@
       </div>
       <hr class="my-8">      
       <div>
-        <div v-if="show == 0" class="grid grid-cols-3 gap-3">
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://joyso.io/trade/en/markets/joy_eth" target="_blank">
-              <img class="w-full shadow-md" src="/images/joyso.png" alt="Joyso">
-            </a>
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2 project-title">Joyso</div>
-              <p class="text-gray-700 text-sm">
-                JOYSO 是一個混合式去中心化交易所，運用智能合約技術確保交易的安全和效率。
-              </p>
+        <transition name="fade">
+          <div v-if="show == 0" class="grid grid-cols-3 gap-3">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://joyso.io/trade/en/markets/joy_eth" target="_blank">
+                <img class="w-full shadow-md" src="/images/joyso.png" alt="Joyso">
+              </a>
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 project-title">Joyso</div>
+                <p class="text-gray-700 text-sm">
+                  JOYSO 是一個混合式去中心化交易所，運用智能合約技術確保交易的安全和效率。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Blockchain" color="purple" />
+                <Tag text="Vue" color="green" />
+              </div>
             </div>
-            <div class="px-6 self-center">
-              <Tag text="Blockchain" color="purple" />
-              <Tag text="Vue" color="green" />
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://tns.joyso.io/" target="_blank">
+                <img class="w-full shadow-md" src="/images/tns.png" alt="Joyso">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">Tron Name Service</div>
+                <p class="text-gray-700 text-sm">
+                  建在 Tron 上面，以智能合約機制用好記的字串來取代繁雜的地址，在 2019-01 曾獲得 <a href="https://tronaccelerator.io/" target="_blank" class="text-blue-500">Tron Accelerator</a> 評審獎。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Blockchain" color="purple" />
+                <Tag text="Vue" color="green" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/index.html" target="_blank">
+                <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/static/fb_index.jpg" alt="chnv">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">360VR 看82歲的台北機廠</div>
+                <p class="text-gray-700 text-sm">
+                  高齡82歲的台北機廠，斑駁的圍牆內有許多少為人知的故事。用 Vue + Aframe 來把環景畫面呈現在網站上。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Vue" color="green" />
+                <Tag text="AFrame" color="pink" />
+                <Tag text="VR" color="pink" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2017_data/chnv/trip.html" target="_blank">
+                <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/chnv/static/FB_travel.jpg" alt="chnv">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">中興新村 小清新之旅</div>
+                <p class="text-gray-700 text-sm">
+                  用 Phaser 製作，中興新村內隨處可見綠色隧道，濃厚眷村味的公務員宿舍，每條小巷、自成一景，跟著榮民伯伯逛逛這美麗的地方。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Phaser" color="pink" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2017_data/summerweather/index.html" target="_blank">
+                <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/summerweather/public/assets/fbcover.jpg" alt="summerweather">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">《怪天氣大作戰》</div>
+                <p class="text-gray-700 text-sm">
+                  用 Phaser 製作小遊戲，模擬冰雹落下，3個關卡、4種成就，你能成功救援到哪一關？
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Phaser" color="pink" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
+                <img class="w-full shadow-md" src="/images/health.png" alt="health">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
+                <p class="text-gray-700 text-sm">
+                  用 D3 + Vue 撈出官方數據並且比對地圖，描繪台灣地圖，製作轉場動態，點出醫療資源的城鄉差距。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Data Visualization" color="teal" />
+                <Tag text="Vue" color="green" />
+                <Tag text="D3" color="orange" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
+                <img class="w-full shadow-md" src="/images/health.png" alt="health">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
+                <p class="text-gray-700 text-sm">
+                  用 D3 + Vue 撈出官方數據並且比對地圖，描繪台灣地圖，製作轉場動態，點出醫療資源的城鄉差距。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Data Visualization" color="teal" />
+                <Tag text="Vue" color="green" />
+                <Tag text="D3" color="orange" />
+              </div>
+            </div>
+            <div class="max-w-sm rounded overflow-hidden shadow-lg card">
+              <a href="https://udn.com/upf/newmedia/2016_data/20160704_middlecross/index.html" target="_blank">
+                <img class="w-full shadow-md" src="http://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross">
+              </a>
+              <div class="px-6 pt-4">
+                <div class="font-bold text-xl mb-2 whitespace-no-wrap">中橫走過一甲子 192公里的淚與笑</div>
+                <p class="text-gray-700 text-sm">
+                  用動態視差表現，橫跨台中到花蓮的中橫，這裡曾有過上萬人次築路人，一斧一鑿與大自然搏命，獲得 <a href="https://www.newsaward.org/" target="_blank" class="text-blue-500">華文永續報導獎</a> 融媒體類首獎。
+                </p>
+              </div>
+              <div class="px-6 self-center">
+                <Tag text="Jquery" color="blue" />
+              </div>
             </div>
           </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://tns.joyso.io/" target="_blank">
-              <img class="w-full shadow-md" src="/images/tns.png" alt="Joyso">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">Tron Name Service</div>
-              <p class="text-gray-700 text-sm">
-                建在 Tron 上面，以智能合約機制用好記的字串來取代繁雜的地址，在 2019-01 曾獲得 <a href="https://tronaccelerator.io/" target="_blank" class="text-blue-500">Tron Accelerator</a> 評審獎。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Blockchain" color="purple" />
-              <Tag text="Vue" color="green" />
-            </div>
+        </transition>
+        <transition name="fade">
+          <div v-if="show == 1">
+            13413kfldnf
           </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/index.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/static/fb_index.jpg" alt="chnv">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">360VR 看82歲的台北機廠</div>
-              <p class="text-gray-700 text-sm">
-                高齡82歲的台北機廠，斑駁的圍牆內有許多少為人知的故事。用 Vue + Aframe 來把環景畫面呈現在網站上。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Vue" color="green" />
-              <Tag text="AFrame" color="pink" />
-              <Tag text="VR" color="pink" />
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/chnv/trip.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/chnv/static/FB_travel.jpg" alt="chnv">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">中興新村 小清新之旅</div>
-              <p class="text-gray-700 text-sm">
-                用 Phaser 製作，中興新村內隨處可見綠色隧道，濃厚眷村味的公務員宿舍，每條小巷、自成一景，跟著榮民伯伯逛逛這美麗的地方。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Phaser" color="pink" />
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/summerweather/index.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/summerweather/public/assets/fbcover.jpg" alt="summerweather">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">《怪天氣大作戰》</div>
-              <p class="text-gray-700 text-sm">
-                用 Phaser 製作小遊戲，模擬冰雹落下，3個關卡、4種成就，你能成功救援到哪一關？
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Phaser" color="pink" />
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
-              <img class="w-full shadow-md" src="/images/health.png" alt="health">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
-              <p class="text-gray-700 text-sm">
-                用 D3 + Vue 撈出官方數據並且比對地圖，描繪台灣地圖，製作轉場動態，點出醫療資源的城鄉差距。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Data Visualization" color="teal" />
-              <Tag text="Vue" color="green" />
-              <Tag text="D3" color="orange" />
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
-              <img class="w-full shadow-md" src="/images/health.png" alt="health">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
-              <p class="text-gray-700 text-sm">
-                用 D3 + Vue 撈出官方數據並且比對地圖，描繪台灣地圖，製作轉場動態，點出醫療資源的城鄉差距。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Data Visualization" color="teal" />
-              <Tag text="Vue" color="green" />
-              <Tag text="D3" color="orange" />
-            </div>
-          </div>
-          <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2016_data/20160704_middlecross/index.html" target="_blank">
-              <img class="w-full shadow-md" src="http://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross">
-            </a>
-            <div class="px-6 pt-4">
-              <div class="font-bold text-xl mb-2 whitespace-no-wrap">中橫走過一甲子 192公里的淚與笑</div>
-              <p class="text-gray-700 text-sm">
-                用動態視差表現，橫跨台中到花蓮的中橫，這裡曾有過上萬人次築路人，一斧一鑿與大自然搏命，獲得 <a href="https://www.newsaward.org/" target="_blank" class="text-blue-500">華文永續報導獎</a> 融媒體類首獎。
-              </p>
-            </div>
-            <div class="px-6 self-center">
-              <Tag text="Jquery" color="blue" />
-            </div>
-          </div>
-        </div>
+        </transition>
       </div>
       <hr class="my-8">      
     </div>
