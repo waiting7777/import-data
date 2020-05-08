@@ -113,13 +113,13 @@
               </div>
             </div>
             <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-              <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
-                <img class="w-full shadow-md" src="/images/health.png" alt="health">
+              <a href="https://waiting7777.github.io/taiwan-vue-components/index.html" target="_blank">
+                <img class="w-full shadow-md" src="/images/taiwan.png" alt="taiwan">
               </a>
               <div class="px-6 pt-4">
-                <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
+                <div class="font-bold text-xl mb-2">Taiwan Vue Components</div>
                 <p class="text-gray-700 text-sm">
-                  用 D3 + Vue 撈出官方數據並且比對地圖，描繪台灣地圖，製作轉場動態，點出醫療資源的城鄉差距。
+                  用 D3 + Vue 自製台灣行政區 svg 圖，並且可自定義打包引用。
                 </p>
               </div>
               <div class="px-6 self-center">
