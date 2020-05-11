@@ -18,7 +18,7 @@
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-black"
               >
-                <font-awesome :icon="['fab', 'twitter']" />
+                <!-- <font-awesome :icon="['fab', 'twitter']" /> -->
               </a>
             </span>
             <span>
@@ -28,7 +28,7 @@
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-black"
               >
-                <font-awesome :icon="['fab', 'github']" />
+                <!-- <font-awesome :icon="['fab', 'github']" /> -->
               </a>
             </span>
             <span>
@@ -38,7 +38,7 @@
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-black"
               >
-                <font-awesome :icon="['fab', 'twitch']" />
+                <!-- <font-awesome :icon="['fab', 'twitch']" /> -->
               </a>
             </span>
             <span>
@@ -48,7 +48,7 @@
                 rel="noopener noreferrer"
                 class="text-gray-400 hover:text-black"
               >
-                <font-awesome :icon="['fab', 'linkedin']" />
+                <!-- <font-awesome :icon="['fab', 'linkedin']" /> -->
               </a>
             </span>
           </div>

@@ -28,21 +28,6 @@ module.exports = {
   },
   plugins: [
     {
-      use: 'gridsome-plugin-tailwindcss',
-      options: {
-        tailwindConfig: './tailwind.config.js',
-        purgeConfig: {
-          whitelist: ['svg-inline--fa', 'table', 'table-striped', 'table-bordered', 'table-hover', 'table-sm'],
-          whitelistPatterns: [/fa-$/, /blockquote$/, /code$/, /pre$/, /table$/, /table-$/]
-        },
-        presetEnvConfig: {},
-        shouldPurge: false,
-        shouldImport: true,
-        shouldTimeTravel: true,
-        shouldPurgeUnusedKeyframes: true
-      }
-    },
-    {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Author',

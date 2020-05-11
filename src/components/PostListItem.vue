@@ -15,7 +15,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list">
                 <li v-for="author in record.author" :key="author.id" class="author-list-item">
-                  <g-link :to="author.path" v-tooltip="author.name">
+                  <g-link :to="author.path">
                     <g-image :src="author.image" class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"></g-image>
                   </g-link>
                 </li>

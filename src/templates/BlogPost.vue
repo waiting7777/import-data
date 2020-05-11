@@ -16,7 +16,7 @@
             <div class="flex justify-between items-center">
               <ul class="list-none flex author-list">
                 <li v-for="author in $page.blog.author" :key="author.id" class="author-list-item">
-                  <g-link :to="author.path" v-tooltip="author.name">
+                  <g-link :to="author.path">
                     <g-image :src="author.image" class="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gray-200 borded-2 border-white"></g-image>
                   </g-link>
                 </li>
@@ -25,7 +25,7 @@
             <div class="pl-3 flex flex-col text-xs leading-none uppercase">
               <p>
                 <span v-for="(author, index) in $page.blog.author" :key="author.id">
-                  <g-link :to="author.path" v-tooltip="author.name" class="hover:underline">{{ author.name }}</g-link>
+                  <g-link :to="author.path" class="hover:underline">{{ author.name }}</g-link>
                   <span v-if="index < $page.blog.author.length - 1">, </span>
                 </span>
               </p>

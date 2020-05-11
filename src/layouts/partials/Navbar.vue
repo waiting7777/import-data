@@ -1,5 +1,21 @@
 <template>
-  <div class="sticky inset-0 h-12 bg-black z-50">
+  <b-navbar toggleable="lg" :sticky="true">
+    <b-navbar-brand>
+      <g-link to="/" class="text-white">Import Data</g-link>
+    </b-navbar-brand>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-collapse id="nav-collapse" is-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <li class="mr-4">
+          <g-link to="/about" class="text-white">
+            Waiting7777 <font-awesome-icon icon="user-secret" />
+          </g-link>
+        </li>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+  <!-- <div class="sticky inset-0 h-12 bg-black z-50">
     <nav class="flex items-center justify-between flex-wrap container mx-auto px-2 sm:px-0 py-2">
       <div class="block flex-grow flex items-center w-auto">
         <g-link to="/">
@@ -59,5 +75,12 @@
         </div>
       </div>
     </nav>
-  </div>
+  </div> -->
 </template>
+
+<style lang="scss" scoped>
+.navbar {
+  background: #000;
+  color: #fff;
+}
+</style>
