@@ -1,86 +1,60 @@
 <template>
-  <b-navbar toggleable="lg" :sticky="true">
-    <b-navbar-brand>
-      <g-link to="/" class="text-white">Import Data</g-link>
-    </b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-    <b-collapse id="nav-collapse" is-nav>
-      <!-- Right aligned nav items -->
+  <b-navbar toggleable="lg" type="dark" :sticky="true">
+    <div class="container">
+      <b-navbar-brand>
+        <g-link to="/" class="text-white">
+          <font-awesome-icon :icon="['fas', 'dragon']" class="icon mr-1"></font-awesome-icon>
+          Import Data
+        </g-link>
+      </b-navbar-brand>
       <b-navbar-nav class="ml-auto">
         <li class="mr-4">
           <g-link to="/about" class="text-white">
-            Waiting7777 <font-awesome-icon icon="user-secret" />
+            Waiting7777
           </g-link>
         </li>
+        <li>
+          <span>
+            <g-link href="https://www.twitter.com/waiting7777" target="_blank" rel="noopener noreferrer" class="text-white mr-3">
+              <font-awesome-icon :icon="['fab', 'twitter']" />
+            </g-link>
+          </span>
+        </li>
+        <li>
+          <span>
+            <g-link href="https://www.github.com/waiting7777" target="_blank" rel="noopener noreferrer" class="text-white mr-3">
+              <font-awesome-icon :icon="['fab', 'github']" />
+            </g-link>
+          </span>
+        </li>
+        <li>
+          <span>
+            <g-link href="https://www.twitch.com/waiting7777" target="_blank" rel="noopener noreferrer" class="text-white mr-3">
+              <font-awesome-icon :icon="['fab', 'twitch']" />
+            </g-link>
+          </span>
+        </li>
+        <li>
+          <span>
+            <g-link href="https://www.linkedin.com/in/weiting-cheng-34a697127/" target="_blank" rel="noopener noreferrer" class="text-white">
+              <font-awesome-icon :icon="['fab', 'linkedin']" />
+            </g-link>
+          </span>
+        </li>
       </b-navbar-nav>
-    </b-collapse>
+    </div>
   </b-navbar>
-  <!-- <div class="sticky inset-0 h-12 bg-black z-50">
-    <nav class="flex items-center justify-between flex-wrap container mx-auto px-2 sm:px-0 py-2">
-      <div class="block flex-grow flex items-center w-auto">
-        <g-link to="/">
-          <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <font-awesome :icon="['fas', 'dragon']" class="mr-3"></font-awesome>
-            <span class="font-semibold text-xl tracking-tight">Import Data</span>
-          </div>
-        </g-link>
-        <div class="text-sm flex-grow uppercase">
-          <ul class="list-none flex justify-left text-gray-300 uppercase">
-            <li class="hover:text-white mr-4">
-              <g-link to="/category/getting-started" class="animated-link">Getting Start</g-link>
-            </li>
-            <li class="hover:text-white">
-              <g-link to="/about" class="animated-link">About</g-link>
-            </li>
-          </ul>
-        </div>
-        <div class="inline-block text-gray-400">
-          <ul class="list-none flex justify-center md:justify-end">
-            <li class="hover:text-white hidden sm:block mr-6 text-md">
-              <span>
-                <g-link to="/about">
-                  Waiting7777
-                </g-link>
-              </span>
-            </li>
-            <li class="hover:text-white hidden sm:block mr-6 text-md">
-              <span>
-                <a href="https://www.twitter.com/waiting7777" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'twitter']" />
-                </a>
-              </span>
-            </li>
-            <li class="hover:text-white hidden sm:block mr-6 text-md">
-              <span>
-                <a href="https://www.github.com/waiting7777" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'github']" />
-                </a>
-              </span>
-            </li>
-            <li class="hover:text-white hidden sm:block mr-6 text-md">
-              <span>
-                <a href="https://www.twitch.com/waiting7777" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'twitch']" />
-                </a>
-              </span>
-            </li>
-            <li class="hover:text-white hidden sm:block text-md">
-              <span>
-                <a href="https://www.linkedin.com/in/weiting-cheng-34a697127/" target="_blank" rel="noopener noreferrer">
-                  <font-awesome :icon="['fab', 'linkedin']" />
-                </a>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div> -->
 </template>
 
 <style lang="scss" scoped>
 .navbar {
   background: #000;
   color: #fff;
+  padding: 0.25rem 1rem;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 </style>

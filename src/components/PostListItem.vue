@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-post px-0 sm:px-4 pb-8 mb-8" :class="{ 'no-border': !border }">
+  <div class="d-flex flex-post" :class="{ 'no-border': !border }">
     <g-link :to="record.path" class="post-card-image-link">
       <g-image :src="record.image" class="post-card-image"></g-image>
     </g-link>
-    <div class="post-card-content flex flex-col justify-between">
+    <div class="post-card-content">
       <g-link :to="record.path">
-        <p class="uppercase font-medium text-xs text-blue-700 mt-3">{{ record.category.title }}</p>
-        <h2 class="post-card-title mt-0">{{ record.title }}</h2>
+        <p class="post-card-category-title">{{ record.category.title }}</p>
+        <h2 class="post-card-title">{{ record.title }}</h2>
         <p class="post-card-excerpt">{{ record.excerpt }}</p>
       </g-link>
       <div class="post-card-meta w-full pt-4">
@@ -47,3 +47,26 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.flex-post {
+  padding: 0 1rem 2rem 1rem;
+}
+
+.post-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-card-category-title {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #2b6cb0;
+  margin-top: 0.75rem;
+}
+
+.post-card-title {
+  
+}
+</style>

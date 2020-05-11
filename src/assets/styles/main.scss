@@ -35,8 +35,13 @@ $grid-breakpoints: (
 );
 
 a {
+  color:  initial;
   &:hover {
     color: initial;
     text-decoration: none;
   }
+}
+
+p {
+  margin: 0;
 }

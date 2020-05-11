@@ -1,29 +1,22 @@
 <template>
-  <nav class="relative bg-black py-4 text-sm text-gray-500">
-    <div class="container mx-auto flex flex-wrap justify-between h-8 items-center">
-      <div class="w-full md:w-1/2 text-center md:text-left h-4 leading-none">
-        <!-- Copyright <font-awesome :icon="['far', 'copyright']" /> 2020 | Design by <g-link to="/about" target="_blank" class="hover:text-white">Waiting7777</g-link>  -->
-      </div>
-      <div class="w-full md:w-1/2">
-        <ul class="list-none flex justify-center md:justify-end">
-          <li class="hover:text-white">
-            <a href="https://www.gridsome.org" target="_blank" rel="noopener noreferrer">Gridsome</a>
-          </li>      
-        </ul>
+  <nav class="py-3">
+    <div class="container">
+      <div>
+        Copyright 2020 | Design by <g-link to="/about" target="_blank" rel="noopener noreferrer" class="text-white">Waiting7777</g-link> 
       </div>
     </div>
   </nav>
 </template>
 
 <style lang="scss" scoped>
-.copyright-contain {
-  line-height: 1;
-  height: 16px;
-}
-::v-deep {
-  .fa-copyright {
-    position: relative;
-    top: 1px;
+nav {
+  background: #000;
+  color: #a0aec0;
+  font-size: 0.875rem;
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 </style>
