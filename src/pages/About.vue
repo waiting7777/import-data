@@ -6,12 +6,6 @@
           <div class="text-2xl font-bold">Hi, I'm Waiting7777</div>
           <br/>
           <p>I'm a <span class="text-blue-500">Frontend Engineer</span>, play hard with <span class="text-teal-500">Data Visualization</span>, <span class="text-yellow-500">Javascript</span>, <span class="text-green-500">Vue</span>, <span class="text-orange-500">D3</span>, <span class="text-pink-500">Phaser</span> for performance and Infographic, Also know about <span class="text-purple-500">Blockchain</span> knowledge with previous job, And Card & Chess Gamer, such as MTG, Hearthstone, Teamfight Tactic.</p>
-          <br/>
-          <br/>
-          <p>
-            <i class="em em-round_pushpin" aria-role="presentation" aria-label="ROUND PUSHPIN"></i>Taipei, Taiwan<br />
-            <i class="em em-email" aria-role="presentation" aria-label="HOT BEVERAGE"></i><a href="mailto:waiting0819@msn.com">Let's Talk!</a>
-          </p>
         </div>
       </div>
       <!-- <div>
@@ -33,16 +27,16 @@
       <div>
         <div class="grid grid-cols-3 gap-3 mb-6">
           <div class="6-center cursor-pointer">
-            <a class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal text-white bg-pink-600 relative" @click="changeTab(0)">
+            <div class="text-xs font-bold uppercase px-5 py-3 rounded block leading-normal text-white bg-pink-600 relative" @click="changeTab(0)">
               <font-awesome :icon="['fas', 'rocket']" class="mr-3" /> Project
-            </a>
+            </div>
           </div>
         </div>
         <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://joyso.io/trade/en/markets/joy_eth" target="_blank">
-              <img class="w-full shadow-md" src="/images/joyso.png" alt="Joyso">
-            </a>
+            <g-link href="https://joyso.io/trade/en/markets/joy_eth" target="_blank">
+              <g-image class="w-full shadow-md" src="/images/joyso.png" alt="Joyso" />
+            </g-link>
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2 project-title">Joyso</div>
               <p class="text-gray-700 text-sm">
@@ -55,9 +49,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://tns.joyso.io/" target="_blank">
-              <img class="w-full shadow-md" src="/images/tns.png" alt="Joyso">
-            </a>
+            <g-link href="https://tns.joyso.io/" target="_blank">
+              <g-image class="w-full shadow-md" src="/images/tns.png" alt="Joyso" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">Tron Name Service</div>
               <p class="text-gray-700 text-sm">
@@ -70,9 +64,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/index.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/static/fb_index.jpg" alt="chnv">
-            </a>
+            <g-link href="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/index.html" target="_blank">
+              <g-image class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/taipei-railway-workshop/static/fb_index.jpg" alt="chnv" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">360VR 看82歲的台北機廠</div>
               <p class="text-gray-700 text-sm">
@@ -86,9 +80,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/chnv/trip.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/chnv/static/FB_travel.jpg" alt="chnv">
-            </a>
+            <g-link href="https://udn.com/upf/newmedia/2017_data/chnv/trip.html" target="_blank">
+              <g-image class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/chnv/static/FB_travel.jpg" alt="chnv" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">中興新村 小清新之旅</div>
               <p class="text-gray-700 text-sm">
@@ -100,9 +94,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2017_data/summerweather/index.html" target="_blank">
-              <img class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/summerweather/public/assets/fbcover.jpg" alt="summerweather">
-            </a>
+            <g-link href="https://udn.com/upf/newmedia/2017_data/summerweather/index.html" target="_blank">
+              <g-image class="w-full shadow-md" src="https://udn.com/upf/newmedia/2017_data/summerweather/public/assets/fbcover.jpg" alt="summerweather" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">《怪天氣大作戰》</div>
               <p class="text-gray-700 text-sm">
@@ -114,9 +108,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://waiting7777.github.io/taiwan-vue-components/index.html" target="_blank">
-              <img class="w-full shadow-md" src="/images/taiwan.png" alt="taiwan">
-            </a>
+            <g-link href="https://waiting7777.github.io/taiwan-vue-components/index.html" target="_blank">
+              <g-image class="w-full shadow-md" src="/images/taiwan.png" alt="taiwan" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">Taiwan Vue Components</div>
               <p class="text-gray-700 text-sm">
@@ -130,9 +124,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
-              <img class="w-full shadow-md" src="/images/health.png" alt="health">
-            </a>
+            <g-link href="https://udn.com/upf/newmedia/2018_data/rural_medical/index.html" target="_blank">
+              <g-image class="w-full shadow-md" src="/images/health.png" alt="health" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2">地圖看台灣醫療資源</div>
               <p class="text-gray-700 text-sm">
@@ -146,9 +140,9 @@
             </div>
           </div>
           <div class="max-w-sm rounded overflow-hidden shadow-lg card">
-            <a href="https://udn.com/upf/newmedia/2016_data/20160704_middlecross/index.html" target="_blank">
-              <img class="w-full shadow-md" src="https://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross">
-            </a>
+            <g-link href="https://udn.com/upf/newmedia/2016_data/20160704_middlecross/index.html" target="_blank">
+              <g-image class="w-full shadow-md" src="https://p.udn.com.tw/upf/newmedia/2016_data/20160704_middlecross/image/main_fb2.jpg" alt="middlecross" />
+            </g-link>
             <div class="px-6 pt-4">
               <div class="font-bold text-xl mb-2 whitespace-no-wrap">中橫走過一甲子 192公里的淚與笑</div>
               <p class="text-gray-700 text-sm">
