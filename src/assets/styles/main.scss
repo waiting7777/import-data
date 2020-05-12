@@ -26,6 +26,10 @@ $theme-colors: (
   dark: #343a40,
 );
 
+.text-gray {
+  color: gray;
+}
+
 $grid-breakpoints: (
   xs: 0,
   sm: 480px,
@@ -44,4 +48,20 @@ a {
 
 p {
   margin: 0;
+}
+
+.seperator {
+  padding-top: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.list-item {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pagination {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }

@@ -4,24 +4,24 @@
       <g-image :src="record.image" class="post-card-image"></g-image>
     </g-link>
     <div class="post-card-content">
-      <g-link :to="record.path">
+      <g-link class="post-card-link" :to="record.path">
         <p class="post-card-category-title">{{ record.category.title }}</p>
         <h2 class="post-card-title">{{ record.title }}</h2>
         <p class="post-card-excerpt">{{ record.excerpt }}</p>
       </g-link>
-      <div class="post-card-meta w-full pt-4">
-        <div class="avatars">
-          <div class="flex items-center">
-            <div class="flex justify-between items-center">
-              <ul class="list-none flex author-list">
-                <li v-for="author in record.author" :key="author.id" class="author-list-item">
+      <div class="post-card-meta">
+        <div>
+          <div class="avatars">
+            <div class="avatars-item">
+              <div class="author-list">
+                <div v-for="author in record.author" :key="author.id" class="author-list-item">
                   <g-link :to="author.path">
-                    <g-image :src="author.image" class="w-8 h-8 rounded-full bg-gray-200 border-2 border-white"></g-image>
+                    <g-image :src="author.image" class="author-list-image"></g-image>
                   </g-link>
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
-            <div class="ml-3 pl-3 border-l flex flex-col text-xs leading-none uppercase">
+            <div class="author-list-text">
               <p>
                 <time :datetime="record.datetime">{{ record.humanTime }}</time>
               </p>
@@ -51,12 +51,29 @@ export default {
 <style lang="scss" scoped>
 .flex-post {
   padding: 0 1rem 2rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+  flex: 1 1 300px;
+  flex-direction: column;
+  width: 100%;
 }
 
 .post-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+}
+
+.post-card-link {
+  flex-grow: 1;
+}
+
+.post-card-image {
+  height: 14rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: .25rem;
+  position: relative;
 }
 
 .post-card-category-title {
@@ -67,6 +84,50 @@ export default {
 }
 
 .post-card-title {
-  
+  font-size: 1.5rem;
+}
+
+.post-card-excerpt {
+  font-size: 1rem;
+}
+
+.post-card-meta {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatars-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-list {
+  display: flex;
+  margin-left: 1.25rem;
+}
+
+.author-list-image {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  background-color: #edf2f7;
+}
+
+.author-list-text {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding-left: 0.75rem;
+  margin-left: 0.75rem;
+  line-height: 1;
+  flex-direction: column;
+  display: flex;
+  border-left: 1px solid #e2e8f0;
 }
 </style>

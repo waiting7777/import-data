@@ -161,11 +161,7 @@
 </template>
 
 <script>
-import Tag from "~/components/Tag.vue"
 export default {
-  components: {
-    Tag
-  },
   metaInfo: {
     title: 'About Me'
   },

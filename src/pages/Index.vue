@@ -61,6 +61,7 @@ export default {
 <style lang="scss" scoped>
 ::v-deep {
   .list-contain {
+    padding-top:  4rem;
     &>.flex-post:nth-child(6n+1) {
       flex: 1 1 100%;
       flex-direction: row;
@@ -70,12 +71,15 @@ export default {
         position: relative;
         min-height: 350px;
         margin-right: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .post-card-image {
         position: absolute;
         height: 100%;
-        width: 100%;
+        width: 90%;
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: .5rem;
@@ -93,6 +97,12 @@ export default {
 
       .post-card-excerpt {
         font-size: 1.25rem;
+      }
+    }
+
+    &>.flex-post:nth-child(6n+5), &>.flex-post:nth-child(6n+6) {
+      .post-card-image {
+        height: 17rem;
       }
     }
   }

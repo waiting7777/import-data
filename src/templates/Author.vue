@@ -1,13 +1,13 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden pt-24">
-      <div class="flex flex-row flex-wrap items-center mx-4 sm:mx-0">
-        <div class="w-full md:w-1/6 mx-auto sm:mx-0">
-          <g-image :src="$page.author.image" class="rounded-full bg-gray-200 w-32 h-32 border-4 border-gray-400 mx-auto md:mx-0"></g-image>
+    <div class="container">
+      <div class="section-container">
+        <div class="avatar-contain">
+          <g-image :src="$page.author.image" class="avatar"></g-image>
         </div>
-        <div class="w-full md:w-5/6 text-center md:text-left md:pl-8 lg:pl-0">
-          <h1 class="pb-0 mb-0 mt-0 text-4xl font-medium">{{ $page.author.name }}</h1>
-          <p class="text-gray-700 text-xl" v-if="$page.author.bio">{{ $page.author.bio }}</p>
+        <div class="text-contain">
+          <h1>{{ $page.author.name }}</h1>
+          <p v-if="$page.author.bio">{{ $page.author.bio }}</p>
           <div class="author-social">
             <span>{{ $page.author.belongsTo.totalCount }} posts</span>
             <span>·</span>
@@ -16,9 +16,8 @@
                 :href="$page.author.twitter"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-black"
               >
-                <!-- <font-awesome :icon="['fab', 'twitter']" /> -->
+                <font-awesome-icon :icon="['fab', 'twitter']" />
               </a>
             </span>
             <span>
@@ -26,9 +25,8 @@
                 :href="$page.author.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-black"
               >
-                <!-- <font-awesome :icon="['fab', 'github']" /> -->
+                <font-awesome-icon :icon="['fab', 'github']" />
               </a>
             </span>
             <span>
@@ -36,9 +34,8 @@
                 :href="$page.author.twitch"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-black"
               >
-                <!-- <font-awesome :icon="['fab', 'twitch']" /> -->
+                <font-awesome-icon :icon="['fab', 'twitch']" />
               </a>
             </span>
             <span>
@@ -46,16 +43,15 @@
                 :href="$page.author.linkedin"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-gray-400 hover:text-black"
               >
-                <!-- <font-awesome :icon="['fab', 'linkedin']" /> -->
+                <font-awesome-icon :icon="['fab', 'linkedin']" />
               </a>
             </span>
           </div>
         </div>
       </div>
-      <div class="pt-8 border-b mx-4 sm:-mx-4"></div>
-      <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
+      <div class="seperator"></div>
+      <div class="list-item">
         <PostListItem
           v-for="edge in $page.author.belongsTo.edges"
           :key="edge.node.id"
@@ -137,6 +133,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  padding-top: 3rem;
+}
+.section-container {
+  display: flex;
+  flex-direction: row;
+}
+.avatar-contain {
+  width: 16.6667%;
+  margin: 0;
+  text-align: center;
+}
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  margin: 0;
+  border: 4px solid #cbd5e0;
+  border-radius: 9999px; 
+}
+.text-contain {
+  width: 83.3334%;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .author-social {
   display: flex;
   align-items: center;

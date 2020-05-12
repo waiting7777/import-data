@@ -13,6 +13,7 @@ library.add(fab)
 library.add(fas)
 
 import '~/assets/styles/main.scss';
+import 'github-markdown-css/github-markdown.css';
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

@@ -1,19 +1,17 @@
 <template>
   <Layout>
-    <div class="container sm:pxi-0 mx-auto overflow-x-hidden">
-      <div class="mx-4 sm:mx-0">
-        <h1 class="pb-0 mb-0 text-5xl font-medium">{{ $page.tag.title }}</h1>
-        <p class="text-gray-700 text-xl">
+    <div class="container">
+      <div>
+        <h1 class="tag-title">{{ $page.tag.title }}</h1>
+        <p class="tag-subtitle">
           A collection of
           <span
             class="self-center"
           >{{ $page.tag.belongsTo.totalCount }} posts</span>
         </p>
       </div>
-
-      <div class="pt-8 border-b"></div>
-
-      <div class="flex flex-wrap pt-8 pb-8 mx-4 sm:-mx-4">
+      <div class="separator"></div>
+      <div class="list-item">
         <PostListItem
           v-for="edge in $page.tag.belongsTo.edges"
           :key="edge.node.id"
@@ -88,3 +86,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.container {
+  padding-top: 3rem;
+}
+
+.tag-title {
+  font-size: 3rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tag-subtitle {
+  color: #4a5568;
+  font-size: 1.25rem;
+}
+</style>
