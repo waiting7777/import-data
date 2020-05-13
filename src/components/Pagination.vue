@@ -1,29 +1,23 @@
 <template>
-  <ul class="flex pl-0 list-none rounded my-2">
-
-    <g-link :to="previousPage(currentPage,totalPages)" class="page-link" tabindex="-1" >
-      <li class="w-10 relative block text-center py-2 leading-tight bg-white border border-gray-300 text-black ml-0 mr-1 rounded hover:bg-gray-300 cursor-pointer" v-if="!isFirstPage(currentPage, totalPages)">
-        &laquo;
-      </li>
-    </g-link>
+  <ul class="pagination">
+    <li class="pagination-element" v-if="!isFirstPage(currentPage, totalPages)">
+      <g-link :to="previousPage(currentPage,totalPages)" tabindex="-1" >&laquo;</g-link>
+    </li>
 
     <li 
     v-for="page in pages" :key="page.name"
-    v-bind:class="[isCurrentPage(currentPage, page.name) ? 'border-l-2 border-l-black' : '']"
-    class="w-10 relative block text-center leading-tight bg-white border border-gray-300 text-black rounded hover:bg-gray-300 ml-1 mr-1 cursor-pointer flex items-center justify-center">
+    v-bind:class="[isCurrentPage(currentPage, page.name) ? 'border-l-black' : '']"
+    class="pagination-element">
       <g-link
           :to="page.link"
-          class="page-link w-full h-full flex items-center justify-center"
           :aria-label="page.name"
           :aria-current="page.name"
         >{{page.name}}</g-link>
     </li>
 
-    <g-link :to="nextPage(currentPage,totalPages)" class="page-link" tabindex="-1" >
-      <li class="w-10 relative block py-2 text-center leading-tight bg-white border border-gray-300 text-black ml-1 rounded hover:bg-gray-300 cursor-pointer" v-if="!isLastPage(currentPage, totalPages)">
-        &raquo;
-      </li>
-    </g-link>
+    <li class="pagination-element" v-if="!isLastPage(currentPage, totalPages)">
+      <g-link :to="nextPage(currentPage,totalPages)" tabindex="-1" >&raquo;</g-link>
+    </li>
   </ul>
 </template>
 
@@ -87,3 +81,40 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.pagination {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border-radius: .25rem;
+
+  &-element {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-left: .25rem;
+    margin-right: .25rem;
+    line-height: 1;
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: .25rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      color: #000;
+    }
+  }
+}
+
+.border-l-black {
+  border-left: 2px solid #000;
+}
+</style>
