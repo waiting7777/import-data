@@ -27,7 +27,67 @@ $theme-colors: (
 );
 
 .text-gray {
-  color: gray;
+  color: #a0aec0;
+}
+
+.border-gray {
+  border: 1px solid #a0aec0;
+}
+
+.text-blue {
+  color: #4299e1;
+}
+
+.border-blue {
+  border: 1px solid #4299e1;
+}
+
+.text-teal {
+  color: #38b2ac;
+}
+
+.border-teal {
+  border: 1px solid #38b2ac;
+}
+
+.text-yellow {
+  color: #ecc94b;
+}
+
+.border-yellow {
+  border: 1px solid #ecc94b;
+}
+
+.text-green {
+  color: #48bb78;
+}
+
+.border-green {
+  border: 1px solid #48bb48;
+}
+
+.text-orange {
+  color: #ed8936;
+}
+
+.border-orange {
+  border: 1px solid #ed8936;
+}
+
+.text-pink {
+  color: #ed64a6;
+}
+
+.border-pink {
+  border: 1px solid #ed64a6;
+}
+
+.text-purple {
+  color: #667eea;
+}
+
+.border-purple {
+  border: 1px solid #667eea;
 }
 
 $grid-breakpoints: (
