@@ -21,40 +21,64 @@ author: author1
 
 - [Gridsome](https://gridsome.org/) 本次主要要介紹之框架，參考於 React 的 gatsby，關於前端效能的圖片處理，code splitting 都已經包裝在裡面，單純簡潔效能好，缺點為很多blog 常見模組都不見得有支援，真有需要得自己刻。
 
-## Facundis quid
+## 用 Gridsome 實作
 
-Venerit conveniunt per memori sed laniarat Dromas, solum tum. Undis lacteus
-infitiatur adest [acies certius](http://www.tollit-clamavit.io/) inscius, cum ad
-emittunt dextra.
+先安裝 gridsome cli
 
-Fronde ait ferox medium, virginis igni sanguine micant: **inertia** ore quoque?
-Iaculi quicquid **virescere misit stirpe** Theseus Venerem! Falce taceo oves,
-idem fugit, non abiit palam quantum, fontes vinci et abiit. Deiectoque exstabant
-**Phrygiae** cepit munus tanto.
+```
+yarn global add @gridsome/cli
+```
 
-## Et capienda Peneia
+接著用 cli 產出 template
 
-*Haec moenia pater* signataque urget, ait quies laqueo sumitque. Misit sit
-moribunda terrae sequar longis hoc, cingebant copia cultros! Alis templi taeda
-solet suum mihi penates quae. Cecidere *deo agger infantem* indetonsusque ipsum;
-ova formasque cornu et pectora [voce oculos](http://www.tibibene.io/iter.html),
-prodis pariterque sacra finibus, Sabinae. Fugarant fuerat, famam ait toto imas
-sorte pectora, est et, procubuit sua Appenninigenae habes postquam.
+```
+gridsome create my-gridsome
+```
 
-## Quoque aut gurgite aliquis igneus
+如此一個有基本架構的 blog 系統就已完成，整個專案架構跟 nuxt.js 很像，主要是以 pages folder 接上 router 來產出 page，如同官網說明一般，就是那麼簡單。
 
-Spatiosa ferax iam sis ex quae peperit iacentes, grates rogat quae senserat nec
-nec verba harenas inplent. Per dum necis in in versus quin loquendi latens;
-inde. **Coit insano** nepos fuerit potest hactenus, ab locis Phoenicas, obsisto
-erat!
+## 接上內容
 
-> Nec uterum Aurorae petentes abstulit. Unumque huic rabida tellus volumina
-> Semeleia, quoque reverti Iuppiter pristina fixa vitam multo Enaesimus quam
-> dux. Sua **damus** decipere, ut **obortas** nomen sine vestrae vita.
+接著就是重頭戲了，要來決定內容的來源，gridsome 支援各種 headless cms 來源，如 contentful ，greenhouse，sanity 等等。而我選擇用本地 markdown file 當作我的內容來源。
 
-Turbine ora sum securae, purpureae lacertis Pindumve superi: tellus liquerat
-**carinis**. Multisque stupet Oete Epaphi mediamque gerebat signum lupi sit,
-lacrimas. Tumidi fassusque hosti, deus [vixque desint
-dedit](http://hisnurus.com/putares-pars) dum et, quo non, dea [suras
-tantum](http://mactata.org/inducere.php). Unus acta capulo. In Dryope sic
-vestigia est neu ignis in **illa mirantur agilis** densior.
+
+
+安裝 *transformer-remark* 以及 *source-filesystem* 這兩個 plugin
+
+```
+yarn add @gridsome/source-filesystem
+yarn add @gridsome/transformer-remark
+```
+
+這兩個 plugin 可以指定 folder，讓他成為你的內容來源，然後把放在那邊的 markdown file 轉成即時的 graphQL 資料格式，接著來串接這些資料。
+
+在 index 頁面的 vue template 底下，用 gridsome 特別的 page-query 區塊
+
+```
+<page-query>
+
+query($page:Int) {
+  entries: allBlog(perPage: 10, page: $page) @paginate {
+    totalCount,
+    pageInfo {
+      totalPages
+      currentPage
+    }
+    edges {
+      node {
+        title
+        excerpt
+        image(width:800)
+        path
+        timeToRead
+        humanTime: date(format:"DD MMM YYYY")
+        dateTime: date
+      }
+    }
+  }
+}
+
+</page-query>
+```
+
+如此範例，會把存在你 graphQL 的 blog data 照著設定的來為撈出來並存在 this.$page裡面。只要來拿這資料來畫畫面，一個基本的 blog 範例就完成了。

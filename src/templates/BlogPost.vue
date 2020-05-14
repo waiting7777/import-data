@@ -177,7 +177,7 @@ export default {
   a {
     letter-spacing: .025em;
     text-transform: uppercase;
-    font-size: .875rem;
+    font-size: 1.25rem;
     color: #4299e1;
   }
 }
