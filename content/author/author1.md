@@ -5,6 +5,6 @@ bio: Senior Frontend Engineer
 twitter: https://www.twitter.com/waiting7777
 github: https://www.github.com/waiting7777
 twitch: https://www.twitch.com/waiting7777
-linkedin: https://www.linkedin.com
+linkedin: https://www.linkedin.com/in/weiting-cheng-34a697127/
 image: ./images/author1.png
 ---

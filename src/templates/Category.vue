@@ -48,8 +48,8 @@
               image(width:800)
               path
               timeToRead
-              humanTime : created(format:"DD MMM YYYY")
-              datetime : created
+              humanTime : date(format:"DD MMM YYYY")
+              datetime : date
               category {
                 id
                 title

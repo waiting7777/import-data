@@ -1,11 +1,11 @@
 ---
-title: Troes retardat
-tags: tag1, tag2
-category: Digital
-excerpt: Lorem markdownum aptos pes, Inachidos caput corrumpere! Vincere ferocia arva.
-created: 2019-01-10
-image: ./images/josh-spires-dronenr-sQalFlXIsLs-unsplash.jpg
-image_caption: Photo by Josh Spires on Unsplash
+title: 用 Gridsome 搭建自己的 Blog
+tags: Vue, Gridsome
+category: Blog
+excerpt: 如同 React 有 Gatsby 這個靜態網站生成器，那麼 Vue 版本的 Gridsome 使用起來如何？。
+date: 2020-05-14
+image: ./images/gridsome.png
+image_caption: from gridsome.org
 author: author1
 ---
 

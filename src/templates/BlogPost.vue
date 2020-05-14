@@ -51,7 +51,7 @@
         </section>
       </div>
     </div>
-    <section class="post-related">
+    <section v-if="$page.previous || $page.next" class="post-related">
       <div class="container">
         <h4 class="post-related-title">Related</h4>
         <div class="post-related-contain">
@@ -72,8 +72,8 @@
       image_caption
       excerpt
       content
-      humanTime : created(format:"DD MMMM YYYY")
-      datetime : created(format:"ddd MMM DD YYYY hh:mm:ss zZ")
+      humanTime : date(format:"DD MMMM YYYY")
+      datetime : date(format:"ddd MMM DD YYYY hh:mm:ss zZ")
       timeToRead
       tags {
         id

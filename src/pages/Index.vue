@@ -25,8 +25,8 @@ query($page:Int) {
         image(width:800)
         path
         timeToRead
-        humanTime: created(format:"DD MMM YYYY")
-        dateTime: created
+        humanTime: date(format:"DD MMM YYYY")
+        dateTime: date
         category {
           id
           title
