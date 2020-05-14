@@ -1,61 +1,145 @@
 ---
-title: 用 Gridsome 搭建自己的 Blog
-tags: Vue, Gridsome
-category: Blog
-excerpt: 如同 React 有 Gatsby 這個靜態網站生成器，那麼 Vue 版本的 Gridsome 使用起來如何？。
-date: 2020-05-14
-image: ./images/gridsome.png
-image_caption: from gridsome.org
+title: How to build a vue component library
+
+tags: Vue
+
+category: Engineering
+
+excerpt: 如果用 vue.js 開發了某個 component ，而希望將它包成 library放到npm讓大家使用的話，到底應該怎麼做呢?
+
+date: 2018-01-19
+
+image: ./images/vue-component.png
+
+image_caption: vue-component
+
 author: author1
+
 ---
 
-## Ossa narrat sortita fecerat sit conataque
+# How to build a vue component library
 
-Lorem markdownum aptos pes, Inachidos caput corrumpere! Hanc haud quam [est
-candore](http://quisquis-in.io/ramossuperum) conpulit meriti. Vincere ferocia
-arva.
+如果用 vue.js 開發了某個 component ，而希望將它包成 library放到npm讓大家使用的話，到底應該怎麼做呢?
 
-## Eleis celeberrimus loci ait falsa infelix tuoque
+## Example Component
 
-Mox haberet ambae torique dedisses quibus que membraque nervo remanet, digiti
-iam neve clamorque fallaces. Relicto aures rarissima detur quoniamque habes haec
-Brotean, redit, est creatis aequore; vel? Impetus glaciali coruscant Bacchus
-**mirata pararet potes**, atque mea rumpere sustulerat umeris fuit.
+```
+<template>
+  <div>{{ display }}</div>
+</template>
 
-## Facundis quid
+<script>
+import moment from 'moment'
+export default {
+  data() {
+      return {
+          time: Date.now()
+      }
+  },
+  computed: {
+      display() {
+          return moment(this.time).format("HH:mm:ss")
+      }
+  },
+  created() {
+      setInterval(() => {
+          this.time = Date.now()
+      }, 1000)
+  }
+}
+</script>
+```
 
-Venerit conveniunt per memori sed laniarat Dromas, solum tum. Undis lacteus
-infitiatur adest [acies certius](http://www.tollit-clamavit.io/) inscius, cum ad
-emittunt dextra.
+這是一個很簡單的時鐘 component ，<div> 裡面會顯示目前的時間。
 
-Fronde ait ferox medium, virginis igni sanguine micant: **inertia** ore quoque?
-Iaculi quicquid **virescere misit stirpe** Theseus Venerem! Falce taceo oves,
-idem fugit, non abiit palam quantum, fontes vinci et abiit. Deiectoque exstabant
-**Phrygiae** cepit munus tanto.
+## Webpack
 
-## Et capienda Peneia
+接下來就要設定 webpack
 
-*Haec moenia pater* signataque urget, ait quies laqueo sumitque. Misit sit
-moribunda terrae sequar longis hoc, cingebant copia cultros! Alis templi taeda
-solet suum mihi penates quae. Cecidere *deo agger infantem* indetonsusque ipsum;
-ova formasque cornu et pectora [voce oculos](http://www.tibibene.io/iter.html),
-prodis pariterque sacra finibus, Sabinae. Fugarant fuerat, famam ait toto imas
-sorte pectora, est et, procubuit sua Appenninigenae habes postquam.
+```
+const webpack = require('webpack')
+const path = require('path')
 
-## Quoque aut gurgite aliquis igneus
+module.exports = {
+    entry: path.resolve(__dirname + '/src/main.js'),
+    output: {
+        path: path.resolve(__dirname + '/dist/'),
+        filename: 'vue-clock.min.js',
+        libraryTarget: 'umd',
+        library: 'vue-clock',
+        umdNamedDefine: true
+    },
+    externals: {
+        moment: 'moment'
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                include: __dirname,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!less!css'
+            }
+        ]
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            sourceMap: false,
+            mangle: true,
+            compress: {
+                warnings: false
+            }
+        })
+    ]
+}
+```
 
-Spatiosa ferax iam sis ex quae peperit iacentes, grates rogat quae senserat nec
-nec verba harenas inplent. Per dum necis in in versus quin loquendi latens;
-inde. **Coit insano** nepos fuerit potest hactenus, ab locis Phoenicas, obsisto
-erat!
+比較值得注意的部分是，因為原本 component 裡面有用到 moment.js ，但在包自己的 library 時就希望不要包進去。
 
-> Nec uterum Aurorae petentes abstulit. Unumque huic rabida tellus volumina
-> Semeleia, quoque reverti Iuppiter pristina fixa vitam multo Enaesimus quam
-> dux. Sua **damus** decipere, ut **obortas** nomen sine vestrae vita.
+```
+externals: {
+  moment: 'moment'
+}
+```
 
-Turbine ora sum securae, purpureae lacertis Pindumve superi: tellus liquerat
-**carinis**. Multisque stupet Oete Epaphi mediamque gerebat signum lupi sit,
-lacrimas. Tumidi fassusque hosti, deus [vixque desint
-dedit](http://hisnurus.com/putares-pars) dum et, quo non, dea [suras
-tantum](http://mactata.org/inducere.php). Unus acta capulo. In Dryope sic
-vestigia est neu ignis in **illa mirantur agilis** densior.
+## Browser and Node.js Bundle
+
+在 webpack 打包時，是可以指定很多種模塊 ex: AMD, common.js, global… ，這次希望一次包成 browser 跟 node 兩邊可以同時使用的 library，所以在設定上是包成比較通用的 umd module，並且在引入點判斷有無 window 變數，有的話就代表是在 browser 環境。
+
+```
+import clock from './Clock.vue'
+
+const Clock = {
+    install: function(Vue){
+        Vue.component('Clock', clock)
+    }
+    
+}
+
+export default Clock 
+
+export { Clock }
+
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(Clock)
+}
+```
+
+## Conclusion
+
+這次試著整理如何將寫好的 component 包成 library ，並且讓就算不用node.js webpack 開發的人，單純瀏覽器引入也能輕鬆使用。
+
+[Live Demo](https://waiting7777.github.io/vue-clock-test/)
+
+[Github](https://github.com/waiting7777/vue-clock-test/)
+
+

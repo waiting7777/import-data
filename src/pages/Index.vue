@@ -100,7 +100,12 @@ export default {
       }
     }
 
+    &>.flex-post:nth-child(6n+2), &>.flex-post:nth-child(6n+3), &>.flex-post:nth-child(6n+4){
+      max-width: 33%;
+    }
+
     &>.flex-post:nth-child(6n+5), &>.flex-post:nth-child(6n+6) {
+      max-width: 50%;
       .post-card-image {
         height: 17rem;
       }

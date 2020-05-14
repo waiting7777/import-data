@@ -50,16 +50,19 @@
           </g-link>
         </section>
       </div>
-    </div>
-    <section v-if="$page.previous || $page.next" class="post-related">
-      <div class="container">
+      <section v-if="$page.previous || $page.next" class="post-related section-container">
         <h4 class="post-related-title">Related</h4>
         <div class="post-related-contain">
           <PostListItem v-if="$page.previous" :record="$page.previous" :border=false />
           <PostListItem v-if="$page.next" :record="$page.next" :border=false />
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="section-container">
+        <div class="comments">
+          <vue-disqus shortname="waiting7777" :identifier="id" :url="$page.blog.path"></vue-disqus>
+        </div>
+      </section>
+    </div>
   </Layout>
 </template>
 
@@ -157,6 +160,14 @@ export default {
     return {
       title: this.$page.blog.title
     }
+  },
+  computed: {
+    id() {
+      return this.$page.blog.title
+    }
+  },
+  mounted() {
+    console.log(this.$page)
   }
 }
 </script>
@@ -168,6 +179,7 @@ export default {
 .section-container {
   margin-left: 8rem;
   margin-right: 8rem;
+  margin-bottom: 3rem;
 }
 
 .post-header {
@@ -241,10 +253,6 @@ export default {
 .post-tag {
   color: #4299e1;
   margin-right: 10px;
-}
-
-.post-related {
-  border-bottom: 1px solid #1a202c;
 }
 
 .post-related-title {

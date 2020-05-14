@@ -15,7 +15,8 @@
     "github-markdown-css": "^4.0.0",
     "gridsome": "^0.7.14",
     "lodash": "^4.17.15",
-    "v-tooltip": "^2.0.3"
+    "v-tooltip": "^2.0.3",
+    "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
