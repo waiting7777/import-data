@@ -50,16 +50,9 @@
           </g-link>
         </section>
       </div>
-      <section v-if="$page.previous || $page.next" class="post-related section-container">
-        <h4 class="post-related-title">Related</h4>
-        <div class="post-related-contain">
-          <PostListItem v-if="$page.previous" :record="$page.previous" :border=false />
-          <PostListItem v-if="$page.next" :record="$page.next" :border=false />
-        </div>
-      </section>
       <section class="section-container">
         <div class="comments">
-          <vue-disqus shortname="waiting7777" :identifier="id" :url="$page.blog.path"></vue-disqus>
+          <vue-disqus shortname="waiting7777" :identifier="$page.blog.id"></vue-disqus>
         </div>
       </section>
     </div>
@@ -69,6 +62,7 @@
 <page-query>
   query($id: ID!, $previousElement: ID!, $nextElement: ID!) {
     blog(id: $id) {
+      id
       title
       path
       image(width:1600, height:800)
@@ -160,14 +154,6 @@ export default {
     return {
       title: this.$page.blog.title
     }
-  },
-  computed: {
-    id() {
-      return this.$page.blog.title
-    }
-  },
-  mounted() {
-    console.log(this.$page)
   }
 }
 </script>
