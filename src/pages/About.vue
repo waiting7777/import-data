@@ -8,12 +8,21 @@
           <p>I'm a <span class="text-blue">Frontend Engineer</span>, play hard with <span class="text-teal">Data Visualization</span>, <span class="text-yellow">Javascript</span>, <span class="text-green">Vue</span>, <span class="text-orange">D3</span>, <span class="text-pink">Phaser</span> for performance and Infographic, Also know about <span class="text-purple">Blockchain</span> knowledge with previous job, And Card & Chess Gamer, such as MTG, Hearthstone, Teamfight Tactic.</p>
         </div>
       </div>
+      <div>
+        <div class="tab-contain">
+          <div>
+            <div class="tab">
+              <font-awesome-icon :icon="['fas', 'briefcase']" class="mr-1" /> Work
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="seperator"></div>
       <div>
         <div class="tab-contain">
           <div>
-            <div class="tab" @click="changeTab(0)">
-              <font-awesome-icon :icon="['fas', 'rocket']" /> Project
+            <div class="tab">
+              <font-awesome-icon :icon="['fas', 'rocket']" class="mr-1" /> Project
             </div>
           </div>
         </div>
@@ -140,7 +149,10 @@
           </div>
         </div>
       </div>
-      <hr class="my-8">      
+      <div class="seperator"></div>   
+      <div class="comment">
+        <vue-disqus shortname="waiting7777" identifier="about"></vue-disqus>
+      </div>  
     </div>
   </Layout>
 </template>
@@ -153,16 +165,6 @@ export default {
   },
   metaInfo: {
     title: 'About Me'
-  },
-  data() {
-    return {
-      show: 0
-    }
-  },
-  methods: {
-    changeTab(show) {
-      this.show = show
-    }
   }
 }
 </script>
