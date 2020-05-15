@@ -17,7 +17,7 @@
               <div class="author-list">
                 <div v-for="author in $page.blog.author" :key="author.id" class="author-list-item">
                   <g-link :to="author.path">
-                    <g-image :src="author.image" class="author-list-image"></g-image>
+                    <g-image :src="author.image" class="author-list-image" alt="author.image"></g-image>
                   </g-link>
                 </div>
               </div>
@@ -38,7 +38,7 @@
         </section>
       </div>
       <section class="post-image">
-        <g-image :src="$page.blog.image"></g-image>
+        <g-image :src="$page.blog.image" alt="blog.image"></g-image>
       </section>
       <div class="section-container">
         <section>

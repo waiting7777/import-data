@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-container">
         <div class="avatar-contain">
-          <g-image :src="$page.author.image" class="avatar"></g-image>
+          <g-image :src="$page.author.image" class="avatar" alt="author.image"></g-image>
         </div>
         <div class="text-contain">
           <h1>{{ $page.author.name }}</h1>

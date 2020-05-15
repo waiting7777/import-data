@@ -16,6 +16,17 @@
             </div>
           </div>
         </div>
+        <div class="work-content">
+          <div class="work-card">
+            <div class="work-image">
+              <g-image src="/images/trevi.jpeg"></g-image>
+            </div>
+            <div class="work-company">Trevi</div>
+            <div class="work-title">Senior Frontend Engineer</div>
+            <div class="work-time">2019/11~</div>
+            <div class="work-desc">Develop high quality gaming platform and acounting platform</div>
+          </div>
+        </div>
       </div>
       <div class="seperator"></div>
       <div>
@@ -246,6 +257,11 @@ export default {
   img {
     width: 100%;
     height: 180.19px;
+  }
+}
+.work {
+  &-card {
+    display: grid;
   }
 }
 </style>

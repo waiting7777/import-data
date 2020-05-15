@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-post" :class="{ 'no-border': !border }">
     <g-link :to="record.path" class="post-card-image-link">
-      <g-image :src="record.image" class="post-card-image"></g-image>
+      <g-image :src="record.image" class="post-card-image" alt="record.image"></g-image>
     </g-link>
     <div class="post-card-content">
       <g-link class="post-card-link" :to="record.path">
@@ -16,7 +16,7 @@
               <div class="author-list">
                 <div v-for="author in record.author" :key="author.id" class="author-list-item">
                   <g-link :to="author.path">
-                    <g-image :src="author.image" class="author-list-image"></g-image>
+                    <g-image :src="author.image" class="author-list-image" alt="author.image"></g-image>
                   </g-link>
                 </div>
               </div>
