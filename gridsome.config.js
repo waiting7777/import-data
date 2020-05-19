@@ -6,7 +6,7 @@
 
 module.exports = {
   siteName: 'Import Data',
-  siteDescription: 'an awesome Gridsome starter kit',
+  siteDescription: 'waiting7777 的部落格，記錄了程式，遊戲，實況等等過程。',
   siteUrl: 'https://waiting7777.org',
   icon: './src/favicon.png',
   templates: {
