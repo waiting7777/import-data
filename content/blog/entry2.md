@@ -1,6 +1,6 @@
 ---
 title: 用 Gridsome 搭建自己的 Blog
-tags: Vue, Gridsome
+tags: Javascript, Vue, Gridsome
 category: Blog
 excerpt: 如同 React 有 Gatsby 這個靜態網站生成器，那麼 Vue 版本的 Gridsome 使用起來如何？。
 date: 2020-05-14
@@ -40,8 +40,6 @@ gridsome create my-gridsome
 ## 接上內容
 
 接著就是重頭戲了，要來決定內容的來源，gridsome 支援各種 headless cms 來源，如 contentful ，greenhouse，sanity 等等。而我選擇用本地 markdown file 當作我的內容來源。
-
-
 
 安裝 *transformer-remark* 以及 *source-filesystem* 這兩個 plugin
 

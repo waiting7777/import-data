@@ -1,7 +1,7 @@
 ---
 title: How to build a vue component library
 
-tags: Vue
+tags: Javascript, Vue
 
 category: Engineering
 
@@ -122,7 +122,7 @@ const Clock = {
     install: function(Vue){
         Vue.component('Clock', clock)
     }
-    
+
 }
 
 export default Clock 
@@ -141,5 +141,3 @@ if (typeof window !== 'undefined' && window.Vue) {
 [Live Demo](https://waiting7777.github.io/vue-clock-test/)
 
 [Github](https://github.com/waiting7777/vue-clock-test/)
-
-
