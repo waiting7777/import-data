@@ -7,35 +7,51 @@
 </template>
 
 <style lang="scss" scoped>
-  .masthead {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 45vh; /* if you don't want it to take up the full screen, reduce this number */
-    overflow: hidden;
-    background: #000;
-  }
+.masthead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 45vh; /* if you don't want it to take up the full screen, reduce this number */
+  overflow: hidden;
+  background: #000;
+}
 
+.hero-title {
+  font-style: normal;
+  font-weight: bold;
+  color: #eee;
+  font-size: 4rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+}
+
+.hero-sub-title {
+  color: #cbd5e0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .masthead {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .hero-title {
-    font-style: normal;
-    font-weight: bold;
-    color: #eee;
-    font-size: 9vmin;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-bottom: 15px;
+    font-size: 3rem;
   }
 
   .hero-sub-title {
-    color: #cbd5e0;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+}
 </style>

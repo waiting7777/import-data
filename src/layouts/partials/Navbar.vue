@@ -57,4 +57,12 @@
     height: 20px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    .navbar-nav {
+      flex-direction: row;
+    }
+  }
+}
 </style>

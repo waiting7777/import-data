@@ -264,4 +264,17 @@ export default {
     display: grid;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .intro-contain {
+    .intro {
+      grid-column-start: 1;
+      grid-column-end: 8;
+    }
+  }
+
+  .project-contain {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 </style>

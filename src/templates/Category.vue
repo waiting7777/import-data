@@ -98,4 +98,8 @@ export default {
   font-size: 1.25rem;
   color: #4a5568;
 }
+
+@media screen and (max-width: 768px) {
+  
+}
 </style>

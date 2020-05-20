@@ -130,4 +130,10 @@ export default {
   display: flex;
   border-left: 1px solid #e2e8f0;
 }
+
+@media screen and (max-width: 768px) {
+  .flex-post {
+    padding: 0 0 1rem 0;
+  }
+}
 </style>

@@ -111,6 +111,55 @@ export default {
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .list-contain {
+      padding-top: 2rem;
+
+      .flex-post {
+        padding-bottom: 1rem;
+      }
+
+      &>.flex-post:nth-child(6n+1) {
+        flex-direction: column;
+
+        .post-card-image-link {
+          margin-right: 0;
+          min-height: auto;
+        }
+
+        .post-card-image {
+          position: initial;
+          width: 100%;
+          height: 14rem;
+        }
+
+        .post-card-title {
+          font-size: 1.75rem;
+        }
+
+        .post-card-excerpt {
+          font-size: 1rem;
+        }
+
+        .post-card-content {
+          flex: 0 1 auto;
+        }
+      }
+
+      &>.flex-post:nth-child(6n+2), &>.flex-post:nth-child(6n+3), &>.flex-post:nth-child(6n+4){
+        max-width: 100%;
+      }
+
+      &>.flex-post:nth-child(6n+5), &>.flex-post:nth-child(6n+6) {
+        max-width: 100%;
+
+        .post-card-image {
+          height: auto;
+        }
+      }
+    }
+  }
 }
 </style>
 

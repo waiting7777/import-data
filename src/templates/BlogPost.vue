@@ -251,4 +251,22 @@ export default {
   grid-template-columns: 1fr 1fr;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding-top: 3rem;
+  }
+  .post-title {
+    font-size: 2.75rem;
+  }
+  .post-excerpt {
+    font-size: 1.25rem;
+  }
+  .section-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .post-image {
+    margin: 2rem 0;
+  }
+}
 </style>
