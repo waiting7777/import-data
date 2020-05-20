@@ -126,3 +126,15 @@ p {
   display: flex;
   justify-content: center;
 }
+
+.list {
+  li {
+    line-height: 2;
+  }
+}
+
+.hover-link {
+  &:hover {
+    color: #4299e1 !important;
+  }
+}

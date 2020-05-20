@@ -7,6 +7,23 @@
           Import Data
         </g-link>
       </b-navbar-brand>
+      <b-navbar-nav>
+        <li class="ml-3">
+          <g-link to="/archive" class="text-white">
+            ARCHIVE
+          </g-link>
+        </li>
+        <li class="ml-3">
+          <g-link to="/category" class="text-white">
+            CATEGORY
+          </g-link>
+        </li>
+        <li class="ml-3">
+          <g-link to="/tags" class="text-white">
+            TAGS
+          </g-link>
+        </li>
+      </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
         <li class="mr-4">
           <g-link to="/about" class="text-white">

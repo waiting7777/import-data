@@ -15,6 +15,7 @@ library.add(fas)
 import '~/assets/styles/main.scss';
 import 'github-markdown-css/github-markdown.css';
 import VueDisqus from 'vue-disqus'
+import VueDayjs from '@/plugins/day'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
@@ -23,6 +24,8 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('font-awesome-icon', FontAwesomeIcon)
 
   Vue.use(BootstrapVue)
+
+  Vue.use(VueDayjs)
 
   Vue.use(VueDisqus)
 }
