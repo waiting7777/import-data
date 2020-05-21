@@ -9,7 +9,7 @@
             {{ $dayjs(blog.node.date).format('YYYY/MM/DD') }}
           </span>
           <g-link :to="blog.node.path" class="hover-link">
-            <span>
+            <span class="archive-title">
               {{ blog.node.title }}
             </span>
           </g-link>
@@ -49,5 +49,8 @@ export default {
 }
 .archive-date {
   margin-right: 0.5rem;
+}
+.archive-title {
+  text-decoration: underline;
 }
 </style>

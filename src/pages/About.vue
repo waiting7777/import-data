@@ -16,15 +16,43 @@
             </div>
           </div>
         </div>
-        <div class="work-content">
+        <div class="work shadow-sm">
           <div class="work-card">
             <div class="work-image">
-              <g-image src="/images/trevi.jpeg"></g-image>
+              <g-image src="/images/trevi.jpeg" alt="trevi"></g-image>
             </div>
-            <div class="work-company">Trevi</div>
-            <div class="work-title">Senior Frontend Engineer</div>
-            <div class="work-time">2019/11~</div>
-            <div class="work-desc">Develop high quality gaming platform and acounting platform</div>
+            <div class="work-content">
+              <div class="work-company">Trevi</div>
+              <div class="work-title">Senior Frontend Engineer</div>
+              <div class="work-time">2019/11 ~ Now</div>
+              <div class="work-desc">Develop high quality gaming platform and acounting platform</div>
+            </div>
+          </div>
+        </div>
+        <div class="work shadow-sm">
+          <div class="work-card">
+            <div class="work-image">
+              <g-image src="/images/joyso.gif" alt="joyso"></g-image>
+            </div>
+            <div class="work-content">
+              <div class="work-company">Joyso</div>
+              <div class="work-title">Senior Frontend Engineer</div>
+              <div class="work-time">2018/05 ~ 2019/08</div>
+              <div class="work-desc">Develop crypto exchange on Ethereum and Dapps on Tron</div>
+            </div>
+          </div>
+        </div>
+        <div class="work shadow-sm">
+          <div class="work-card">
+            <div class="work-image">
+              <g-image src="/images/udn.png" alt="udn"></g-image>
+            </div>
+            <div class="work-content">
+              <div class="work-company">United Daily News</div>
+              <div class="work-title">Frontend Engineer</div>
+              <div class="work-time">2015/12 ~ 2018/05</div>
+              <div class="work-desc">Build various Data Visualization News Project</div>
+            </div>
           </div>
         </div>
       </div>
@@ -260,8 +288,38 @@ export default {
   }
 }
 .work {
+  width: 66%;
+  margin-bottom: 1rem;
   &-card {
     display: grid;
+    grid-template-columns: 150px auto;
+    padding: 1rem;
+    grid-gap: 1rem;
+  }
+
+  &-image {
+    align-self: center;
+
+    img {
+      max-width: 90%;
+    }
+  }
+
+  &-company {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &-title {
+    font-size: 16px;
+  }
+
+  &-time {
+    color: #4a5568;
+  }
+
+  &-desc {
+    font-size: 14px;
   }
 }
 
