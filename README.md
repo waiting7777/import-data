@@ -1,14 +1,4 @@
-# Default starter for Gridsome
+<h3 align="center">一只🐟的笔记</h3>
 
-This is the project you get when you run `gridsome create new-project`.
-
-### 1. Install Gridsome CLI tool if you don't have
-
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+<p>Hi! 我是 Waitiing7777，這是我用 vue + gridsome 所搭建的個人 blog，裡面記錄了我 coding，及遊戲的心得，長年攀爬於遊戲天梯，魔獸競技場第一 殘忍鬥士，魔法風雲會大獎賽32強，爐石傳說玩家，目前專注在聯盟戰棋，台美服大師。</p>
+  
