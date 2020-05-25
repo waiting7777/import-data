@@ -64,10 +64,18 @@ module.exports = {
         config: {
           '/blog/*': {
             changefreq: 'weekly',
-            priority: 0.8
+            priority: 0.9
           },
-          '/contact': {
-            changefreq: 'monthly',
+          '/archive': {
+            changefreq: 'weekly',
+            priority: 0.9
+          },
+          '/category': {
+            changefreq: 'weekly',
+            priority: 0.9
+          },
+          '/tags': {
+            changefreq: 'weekly',
             priority: 0.9
           },
           '/about': {
