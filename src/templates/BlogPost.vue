@@ -146,6 +146,8 @@
 
 <script>
 import PostListItem from "~/components/PostListItem.vue"
+import 'highlight.js/styles/github.css';
+import hljs from 'highlight.js';
 export default {
   components: {
     PostListItem
@@ -154,6 +156,11 @@ export default {
     return {
       title: this.$page.blog.title
     }
+  },
+  mounted() {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
   }
 }
 </script>
