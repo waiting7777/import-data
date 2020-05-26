@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-post" :class="{ 'no-border': !border }">
+  <div class="d-flex flex-post post-card" :class="{ 'no-border': !border }">
     <g-link :to="record.path" class="post-card-image-link">
       <g-image :src="record.image" class="post-card-image" alt="record.image"></g-image>
     </g-link>
@@ -74,6 +74,11 @@ export default {
   object-fit: cover;
   border-radius: .25rem;
   position: relative;
+}
+
+.post-card-image-link {
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .post-card-category-title {

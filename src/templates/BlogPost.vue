@@ -50,6 +50,13 @@
           </g-link>
         </section>
       </div>
+      <section class="post-related section-container">
+        <h4 class="post-related-title">類似文章</h4>
+        <div class="post-related-contain">
+          <PostListItem v-if="$page.previous" :record="$page.previous" :border=false></PostListItem>
+          <PostListItem v-if="$page.next" :record="$page.next" :border=false></PostListItem>
+        </div>
+      </section>
       <section class="section-container">
         <div class="comments">
           <vue-disqus shortname="waiting7777" :identifier="$page.blog.id"></vue-disqus>
@@ -249,13 +256,21 @@ export default {
 }
 
 .post-related-title {
-  padding-left: 1rem;
   margin-bottom: 1rem;
 }
 
 .post-related-contain {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+::v-deep {
+  .post-related-contain {
+    .post-card {
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
