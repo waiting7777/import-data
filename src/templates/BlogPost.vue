@@ -161,7 +161,11 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.blog.title
+      title: this.$page.blog.title,
+      meta: [
+        { key: 'description', property: 'og:description', content: this.$page.blog.excerpt },
+        { key: 'image', property: 'og:image', content: this.$page.blog.image.src }
+      ]
     }
   },
   mounted() {
