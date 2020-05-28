@@ -79,7 +79,7 @@ export default {
       .post-card-image {
         position: absolute;
         height: 100%;
-        width: 90%;
+        width: 100%;
         -o-object-fit: cover;
         object-fit: cover;
         border-radius: .5rem;

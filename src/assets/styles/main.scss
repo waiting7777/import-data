@@ -138,3 +138,10 @@ p {
     color: #4299e1 !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

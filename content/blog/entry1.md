@@ -17,8 +17,6 @@ author: author1
 
 ---
 
-# How to build a vue component library
-
 如果用 vue.js 開發了某個 component ，而希望將它包成 library放到npm讓大家使用的話，到底應該怎麼做呢?
 
 ## Example Component

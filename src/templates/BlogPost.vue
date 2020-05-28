@@ -290,5 +290,16 @@ export default {
   .post-image {
     margin: 2rem 0;
   }
+  .post-related-contain {
+    grid-template-columns: 1fr;
+  }
+
+  ::v-deep {
+    .post-related-contain {
+      .post-card {
+        padding: 0 1rem 2rem 1rem;
+      }
+    }
+  }
 }
 </style>

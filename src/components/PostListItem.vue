@@ -76,11 +76,6 @@ export default {
   position: relative;
 }
 
-.post-card-image-link {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
 .post-card-category-title {
   text-transform: uppercase;
   font-size: 0.75rem;

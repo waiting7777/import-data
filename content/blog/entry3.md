@@ -17,8 +17,6 @@ author: author1
 
 ---
 
-# Nodejs 的下一代？Deno 1.0 理念翻譯及初探心得。
-
 有 Nodejs 之父之稱的 Ryan Dahl, 當年在放下了 Nodejs 開發之後，想回鍋之時，發現整個 Javascript 的生態系已經往前邁進了太多，而隨著時代演進的 Nodejs 裡面隱藏了太多的技術債，所以下定決心開發一個新的語言。Node => no-de => Deno ，那麼 Deno 又有啥過人之處，或是改進了哪些 Nodejs 的問題呢？
 
 

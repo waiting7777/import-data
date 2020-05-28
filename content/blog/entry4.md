@@ -16,8 +16,6 @@ image_caption: vue-icon-system
 author: author1
 ---
 
-# How to construct svg icon system in Vue
-
 在前端頁面中，用 svg icon 已經不是什麼稀奇的事情，那麼有什麼好方法可以讓你在自己的 Vue app 裡面
 
 ## What is SVG
