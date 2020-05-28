@@ -208,3 +208,5 @@ export default Selectable.extend({
 ## 結論
 
 在工程技術裡面，通用性跟效能通常是很難兼得的，在這種追求通用性的大框架有時候就會犧牲了效能，所以除了框架能讓你簡單套出結果的同時，千萬別忘記怎麼用手刻基本款，這樣當有特殊需求的時候，才能有辦法處理。
+
+測試code: [github example](https://github.com/waiting7777/vuetify-test)
