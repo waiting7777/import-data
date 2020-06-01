@@ -110,6 +110,11 @@ export default {
 
     a {
       color: #000;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
