@@ -63,20 +63,20 @@ module.exports = {
       options: {
         config: {
           '/blog/*': {
-            changefreq: 'weekly',
+            changefreq: 'daily',
             priority: 0.9
           },
           '/archive': {
-            changefreq: 'weekly',
+            changefreq: 'daily',
             priority: 0.9
           },
           '/category': {
             changefreq: 'weekly',
-            priority: 0.9
+            priority: 0.8
           },
           '/tags': {
             changefreq: 'weekly',
-            priority: 0.9
+            priority: 0.8
           },
           '/about': {
             changefreq: 'monthly',
