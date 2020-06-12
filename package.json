@@ -7,18 +7,17 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.0",
-    "@gridsome/plugin-sitemap": "^0.2.3",
+    "@gridsome/plugin-google-analytics": "^0.1.1",
+    "@gridsome/plugin-sitemap": "^0.3.0",
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.6.0",
     "bootstrap-vue": "^2.13.1",
     "dayjs": "^1.8.27",
     "github-markdown-css": "^4.0.0",
-    "gridsome": "^0.7.14",
+    "gridsome": "^0.7.17",
     "highlight.js": "^10.0.3",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
-    "v-tooltip": "^2.0.3",
     "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
