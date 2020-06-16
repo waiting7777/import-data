@@ -17,8 +17,6 @@ author: author1
 
 ---
 
-NuxtJs 團隊在今年拿到融資以後，開始著手建立更多好用的原生掛件，讓生態系更加豐富，以下是 Nuxt Content 的使用測試心得。
-
 ## 介紹
 在你的 NuxtJs 專案底下安裝 ```@nuxtjs/content``` 套件，並且將你的內容放在 ```content/``` 資料夾底下，那麼套件將會自動將資料夾底下的 Markdown，JSON，YAML，CSV 檔案轉成 MongoDB 形式的 API，這樣你的專案將會如同擁有一個內容的資料庫。
 

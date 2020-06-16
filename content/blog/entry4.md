@@ -16,8 +16,6 @@ image_caption: vue-icon-system
 author: author1
 ---
 
-在前端頁面中，用 svg icon 已經不是什麼稀奇的事情，那麼有什麼好方法可以讓你在自己的 Vue app 裡面
-
 ## What is SVG
 
 SVG(Scalable Vector Graphics) 是一種 xml 格式的向量圖型，因為是向量所以定義好線條以後，各種解析度都能正常顯示，不會有一般圖片放大模糊的問題，而且檔案大小也比一般圖檔來的小。此外 svg 本身就像是 html 的 tag，所以可以直接拿來當 vue 的 component。

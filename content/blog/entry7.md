@@ -17,8 +17,6 @@ author: author1
 
 ---
 
-SVG 有個 css 屬性叫做 stroke-dasharray，利用它再配合 transition 或是 animate 等等 css 特性，就可以做出 svg 線條的動畫。
-
 ## stroke-width
 
 SVG 的 stroke 是一個很基本的屬性，如果在線段上，那他就是指整條線，例如 ```<path> <line>``` ，如果在圖形上那麼指的就是圖形的邊 ```<rect> <circle>```，stroke 可以指定顏色，storke-width 可以指定寬度，那麼 storke-dasharray 可以幹嘛呢？它是用來畫 "虛線" 的。
