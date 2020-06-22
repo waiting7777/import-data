@@ -34,7 +34,7 @@
     category(id: $id) {
       title
       path
-      belongsTo(perPage: 2, page: $page) @paginate {
+      belongsTo(perPage: 10, page: $page) @paginate {
         totalCount
         pageInfo {
           totalPages

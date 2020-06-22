@@ -82,7 +82,7 @@
       github
       twitch
       linkedin
-      belongsTo(perPage: 5, page: $page) @paginate {
+      belongsTo(perPage: 10, page: $page) @paginate {
         totalCount
         pageInfo {
           totalPages
