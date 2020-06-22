@@ -1,7 +1,7 @@
 ---
 title: Nuxt Content 初探心得
 
-tags: Javascript, Vue, Nuxt
+tags: Javascript, Vue, NuxtJS
 
 category: Engineering
 
