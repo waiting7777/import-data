@@ -80,8 +80,7 @@ export default {
         position: absolute;
         height: 100%;
         width: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
+        object-fit: contain;
         border-radius: .5rem;
       }
 
