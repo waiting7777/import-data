@@ -1,7 +1,7 @@
 ---
 title: NuxtJS -- Going Full Static (中翻)
 
-tags: Javascript, Vue, NuxtJS
+tags: Javascript, Vue, NuxtJS, Translate
 
 category: Engineering
 
@@ -120,19 +120,19 @@ export default {
 
 >⚠️ 你得先跑 `nuxt build` 才能用 `nuxt export`
 
-#### Crazy fast static applications
+### Crazy fast static applications
 
 `nuxt export` 會 pre-render 你全部的頁面成 HTML 並且把 `asyncData` 和 `fetch` hook 裡面的資料存起來，讓之後用戶使用，意思就是 **在用戶端不再會有 API 呼叫**。並且把頁面的 payload 轉換成 js 檔案，更可以有效的減少檔案大小。
 
 我們同時也改進了 [smart prefetching](https://nuxtjs.org/blog/introducing-smart-prefetching)，在純靜態時可以讓瀏覽切換近乎瞬間👀
 
-#### Crawler integrated
+### Crawler integrated
 
 nuxt 同時有爬蟲在裡面，偵測每個相關 route 並產生並產生頁面。如果你想要把很多 route 排除可以用 [generate.exclude](https://nuxtjs.org/api/configuration-generate#exclude)。你可以繼續使用 [generate.routes](https://nuxtjs.org/api/configuration-generate#routes) 來新增額外的 route 並且不會生出靜態頁面。
 
 想要取消爬蟲，在 `nuxt.config.js` 設定 `generate.crawler: false`
 
-#### Faster re-deploy
+### Faster re-deploy
 
 在將 `nuxt build` 以及 `nuxt export` 分開之後，我們就可以實作一個新的優化，只 pre-render 內容有改變的頁面，這代表 no Webpack build -> 快速重新部署
 
@@ -187,7 +187,7 @@ export default async function ({ query, enablePreview }) {
 
 - 我們新增了 export hooks 跟原本的 generate hooks 有些微不同，用於增進模組開發者的便利性。
 
-#### What to do next
+### What to do next
 
 - 學習如何從 @nuxtjs/dotenv 移動到 runtime config ，請看這篇[文章](https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config)
 
