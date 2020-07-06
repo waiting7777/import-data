@@ -17,7 +17,7 @@ author: author1
 
 ---
 
-[![video](https://res.cloudinary.com/nuxt/video/upload/v1588091670/demo-blog-content_shk6kw.jpg)](https://res.cloudinary.com/nuxt/video/upload/v1592314331/demo-blog-content_shk6kw.mp4)
+[![video-1](https://res.cloudinary.com/nuxt/video/upload/v1588091670/demo-blog-content_shk6kw.jpg)](https://res.cloudinary.com/nuxt/video/upload/v1592314331/demo-blog-content_shk6kw.mp4)
 
 [View demo](https://blog-with-nuxt-content.netlify.app/) / [Source code](https://github.com/nuxt-company/demo-blog-nuxt-content)
 
@@ -47,21 +47,21 @@ author: author1
 
   - [Adding a code block to your post](#adding-a-code-block-to-your-post)
 
-  - [Creating a previous and next component](#13)
+  - [Creating a previous and next component](#creating-a-previous-and-next-component)
 
-  - [Working with the API](#14)
+  - [Working with the API](#working-with-the-api)
 
-  - [List all the blog posts](#15)
+  - [List all the blog posts](#list-all-the-blog-posts)
 
-  - [Using the where query to create an Author page](#16)
+  - [Using the where query to create an Author page](#using-the-where-query-to-create-an-author-page)
 
-  - [Add a search field](#17)
+  - [Add a search field](#add-a-search-field)
 
-- [Live editing our content](#18)
+- [Live editing our content](#live-editing-our-content)
 
-- [Generating our content](#19)
+- [Generating our content](#generating-our-content)
 
-- [Conclusion](#20)
+- [Conclusion](#conclusion)
 
 ## Getting started
 
@@ -501,3 +501,335 @@ content: {
   }
 }
 ```
+
+### Creating a previous and next component
+
+現在我們擁有了幾乎完整的 blog 頁面了，但仍然不夠好，因為使用者很難從這一篇連接到下一篇，首先我們先複製我們原本的文章，接著建立新的 component 來連接到前一篇與後一篇。
+
+```
+touch components/PrevNext.vue
+```
+
+在這 component 中，我們用 `v-if` 在我們的 `NuxtLink` 上面，用來判斷是否有前一篇或後一篇文章，我們可以從 `prev` 和 `next` 屬性中拿到文章的所有資訊，這代表我們可以建立個有文章標題，圖片，敘述的卡片樣式來導聯結。
+
+`components/PrevNext.vue`
+```
+<template>
+  <div class="flex justify-between">
+    <NuxtLink
+      v-if="prev"
+      :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
+      class="text-primary font-bold hover:underline"
+    >
+      {{ prev.title }}
+    </NuxtLink>
+    <span v-else>&nbsp;</span>
+    <NuxtLink
+      v-if="next"
+      :to="{ name: 'blog-slug', params: { slug: next.slug } }"
+      class="font-bold hover:underline"
+    >
+      {{ next.title }}
+    </NuxtLink>
+    <span v-else>&nbsp;</span>
+  </div>
+</template>
+```
+在 component 中，我們傳入 `prev` 和 `next` 來讓他們出現在我們的 blog 頁面中。
+
+`components/PrevNext.vue`
+```
+<script>
+export default {
+  props: {
+    prev: {
+      type: Object,
+      default: () => null
+    },
+    next: {
+      type: Object,
+      default: () => null
+    }
+  }
+}
+</script>
+```
+現在我們可以從 `asyncData` 來拿到我們想要的前一篇以及後一篇文章，宣告個 const array `prev` 和 `next`，然後因為我們只要 title 和 slug 所以我們可以用 `only` method。
+
+我們可以用 `sortBy()` 方法來讓文章是照著 createAt 的日期排序，接著再用 `surround()` 方法來拿到正確的前後篇文章。
+
+接著再如同 `article` 般回傳 `prev` 和 `next`。
+
+`pages/blog/_slug.vue`
+```
+async asyncData({ $content, params }) {
+  const article = await $content('articles', params.slug).fetch()
+
+  const [prev, next] = await $content('articles')
+    .only(['title', 'slug'])
+    .sortBy('createdAt', 'asc')
+    .surround(params.slug)
+    .fetch()
+
+  return {
+    article,
+    prev,
+    next
+  }
+},
+```
+現在我們可以在我們的 slug 頁面增加 `<prev-next>` component 並把 `prev` 和 `next` 傳入
+
+`pages/blog/_slug.vue`
+```
+<template>
+  <article>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.description }}</p>
+    <img :src="article.img" :alt="article.alt" />
+    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+
+    <nuxt-content :document="article" />
+
+    <author :author="article.author" />
+
+    <prev-next :prev="prev" :next="next" />
+  </article>
+</template>
+```
+
+### Working with the API
+
+content module 有建立 API 介面給大家查詢，在 dev 模式下 API 在 [http://localhost:3000/_content/](http://localhost:3000/_content/)，在我們的範例中，它會是空的，因為我們的文章是放在 articles 資料夾裡，所以我們要在這個連結 [http://localhost:3000/_content/articles](http://localhost:3000/_content/articles) 查看我們的文章列表。
+
+> 只要查詢他的 slug，就可以單獨查看文章，[http://localhost:3000/_content/articles/my-first-blog-post](http://localhost:3000/_content/articles/my-first-blog-post)
+
+> 你可以使用像是[JSON Viewer Awesome](https://chrome.google.com/webstore/detail/json-viewer-awesome/iemadiahhbebdklepanmkjenfdebfpfe?hl=en)的 chrome 外掛來讓呈現結果更好閱讀。
+
+現在我們可以直接在 url 下 query 並且直接在頁面上看到 JSON 的結果，現在我們要一個全部 blog post 的列表，並且屬性只要 title, description, img, slug, author，讓我們來看看結果吧。
+
+[http://localhost:3000/_content/articles?only=title&only=description&only=img&only=slug&only=author](http://localhost:3000/_content/articles?only=title&only=description&only=img&only=slug&only=author)
+
+[![video-2](https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.jpg)](https://res.cloudinary.com/nuxt/video/upload/v1588091670/content-api_aocbcn.mp4)
+
+### List all the blog posts
+
+現在我們可以建立我們的 blog 索引頁來列出所有的文章，nuxt 建立的時候已經有 index 頁面，只要把範例 code 刪掉就好。
+
+> 在 [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) 中，我使用了主要的 index page 當作 blog 索引頁，而不是在 blog 中建立一個 `index.vue`，因為在這 demo 中只會有這個索引頁，但在其他專案裡你通常會有 home page, contact page 等等。
+
+用 `asyncData` 傳入的 `$content` 以及 `params`，接著建立一個 articles 用 `only()` 來讓傳回的只有 title, description, img, slug, author，用 `sortBy()` 讓他照著日期排序，用 `fetch()` 來取得回傳資料。
+
+`page/blog/index.vue`
+```
+<script>
+export default {
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles', params.slug)
+      .only(['title', 'description', 'img', 'slug', 'author'])
+      .sortBy('createdAt', 'asc')
+      .fetch()
+
+    return {
+      articles
+    }
+  }
+}
+</script>
+```
+我們的 articles 現在就如同其他任何的 data 屬性，所以可以直接拿來 template `v-for` 使用，就直接將文章的 title, author name, decription date, img 列出，並用 `<NuxtLink>` 連結到該 slug 文章。
+
+`pages/index.vue`
+```
+<template>
+  <div>
+    <h1>Blog Posts</h1>
+    <ul>
+      <li v-for="article of articles" :key="article.slug">
+        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          <img :src="article.img" />
+          <div>
+            <h2>{{ article.title }}</h2>
+            <p>by {{ article.author.name }}</p>
+            <p>{{ article.description }}</p>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+</template>
+```
+
+### Using the where query to create an Author page
+
+在 content module 裡我們可以用 `where()` 來過濾我們要的結果，我們可以有一個作者頁面，顯示該作者的細節以及所有該作者文章。
+
+```
+touch pages/blog/author/_author.vue
+```
+就像我們之前在 `asyncData` 中 `fetch()` 文章一樣，但這次新增個 `where()` 來拿到從 params 來的作者的文章。
+
+舉例來說:
+
+[http://localhost:3000/_content/articles?author.name=Maria](http://localhost:3000/_content/articles?author.name=Maria)
+
+因為我們的 author 是一個 object，想要直接 query 他的屬性的話，必須要在 `nuxt.config.js` 檔案中新增 `nestedProperties`。
+
+`nuxt.config.js`
+```
+export default {
+  content: {
+    nestedProperties: [
+      'author.name'
+    ]
+  }
+}
+```
+如同前面所見，我們想要 query 作者 Maria 所以我們要在 `$regex` 中添加大小寫注意的參數。
+
+接著我們要拿到相關細節資料，在上一個範例中，我們用 `only()` 來決定要回傳的屬性，但其實如果要回傳的偏多，可以用 `without()` 來決定不要拿到啥就好。
+
+`pages/blog/author/_author.vue`
+```
+<script>
+export default {
+  async asyncData({ $content, params }) {
+    const articles = await $content('articles', params.slug)
+      .where({
+        'author.name': {
+          $regex: [params.author, 'i']
+        }
+      })
+      .without('body')
+      .sortBy('createdAt', 'asc')
+      .fetch()
+
+    return {
+      articles
+    }
+  }
+}
+</script>
+```
+> 你可以用 array 來傳多個參數進去 `without()` 方法裡。
+```
+without(['body', 'title])
+```
+現在可以用回傳的資料來顯示個有作者名稱和簡介以及他的全部文章的作者頁面
+
+`pages/blog/author/_author.vue`
+<template>
+  <div>
+    <h1>Author: {{ articles[0].author.name }}</h1>
+    <p>Bio: {{ articles[0].author.bio }}</p>
+    <h3>Here are a list of articles by {{ articles[0].author.name }}:</h3>
+    <ul>
+      <li v-for="article in articles" :key="article.slug">
+        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          <img :src="article.img" :alt="article.alt" />
+          <div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
+            <p>{{ formatDate(article.updatedAt) }}</p>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+</template>
+
+> 所有的 style 都從範例中移除了，你可以自己 style 或是從 [demo code](https://github.com/nuxt-company/demo-blog-nuxt-content) 複製。
+
+接著我們要從 blog 頁面連接到作者頁面
+
+`components/Author.vue`
+```
+<NuxtLink :to="`/blog/author/${author.name}`">
+  <img :src="author.img" />
+  <div>
+    <h4>Author</h4>
+    <p>{{ author.name }}</p>
+    <p>{{ author.bio }}</p>
+  </div>
+</NuxtLink>
+```
+
+### Add a search field
+
+Nuxt content module 也給了我們搜尋的能力，只要使用它的 `search()` 方法。
+
+首先先建立一個搜尋 component
+```
+touch components/AppSearchInput.vue
+```
+我們新增一個開始是空字串以及空陣列的資料屬性 `searchQuery` 和 `articles`，接著我們使用 `watch`，當使用者輸入 `searchQuery` 時去 `search()` `$content`。
+
+`components/AppSearchInput.vue`
+```
+<script>
+export default {
+  data() {
+    return {
+      searchQuery: '',
+      articles: []
+    }
+  },
+  watch: {
+    async searchQuery(searchQuery) {
+      if (!searchQuery) {
+        this.articles = []
+        return
+      }
+      this.articles = await this.$content('articles')
+        .limit(6)
+        .search(searchQuery)
+        .fetch()
+    }
+  }
+}
+</script>
+```
+接下來我們需要在 template 中用 `v-model` 連接 `searchQuery` 屬性以及如果有 query 出的文章，我們用 `v-for` 來羅列出文章並用 `<NuxtLink>` 連結過去。
+
+`components/AppSearchInput.vue`
+```
+<template>
+  <div>
+    <input
+      v-model="searchQuery"
+      type="search"
+      autocomplete="off"
+      placeholder="Search Articles"
+    />
+    <ul v-if="articles.length">
+      <li v-for="article of articles" :key="article.slug">
+        <NuxtLink :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+          {{ article.title }}
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
+</template>
+```
+這樣這個 component 就能用在頁面任何地方。
+
+`page/_slug.vue`
+```
+<AppSearchInput />
+```
+
+## Live editing our content
+
+我們的 blog 看起來已經相當不錯了，如果我們想要修改內容，只要在頁面裡點兩下就好，content module 支援 live edit，點完修改就會自動存回檔案裡。
+
+[![video-1](https://res.cloudinary.com/nuxt/video/upload/v1588091670/live-edit-content_kdorvi.jpg)](https://res.cloudinary.com/nuxt/video/upload/v1592314331/live-edit-content_kdorvi.mp4)
+
+## Generating our content
+
+如果接下來我們想要 deploy 我們的新 blog，只要執行 `nuxt build` 和 `nuxt export` 指令即可。
+
+## Conclusion
+
+處理內容真的很有趣，以及還有很多額外的東西可以建立，別忘了到我們的 discord 群的 showcase 頻道分享你的成品，或是到[這裡](https://nuxtjs.org/#subscribe-to-newsletter)訂閱我們的新聞郵件，會有更多額外的 NuxtJS 消息。
+
+> 譯者註：本篇內容其實蠻詳細的，原文會把要用的方法，資料屬性都清楚的講一遍，而且還有線上的範例以及 code，對於從零開始建立 blog 蠻有幫助的！
