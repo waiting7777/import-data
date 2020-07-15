@@ -14,7 +14,7 @@
     "bootstrap-vue": "^2.13.1",
     "dayjs": "^1.8.27",
     "github-markdown-css": "^4.0.0",
-    "gridsome": "^0.7.17",
+    "gridsome": "^0.7.19",
     "highlight.js": "^10.0.3",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
