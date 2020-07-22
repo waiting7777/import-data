@@ -1,6 +1,6 @@
 ---
 title: 用 Gridsome 搭建自己的 Blog
-tags: Javascript, Vue, Gridsome
+tags: Javascript, Vue, Gridsome, Blog
 category: Blog
 excerpt: 如同 React 有 Gatsby 這個靜態網站生成器，那麼 Vue 版本的 Gridsome 使用起來如何？。
 date: 2020-05-14
