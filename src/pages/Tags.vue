@@ -42,6 +42,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding-top: 3rem;
+  padding-bottom: 3rem;
   min-height: calc(100vh - 101px);
 }
 </style>
