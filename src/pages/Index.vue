@@ -5,6 +5,15 @@
       <div class="d-flex flex-wrap list-contain">
         <PostListItem v-for="edge in $page.entries.edges" :key="edge.node.id" :record="edge.node" />
       </div>
+      <div class="pagination flex justify-center mb-8">
+        <Pagination
+          :baseUrl="''"
+          :currentPage="$page.entries.pageInfo.currentPage"
+          :totalPages="$page.entries.pageInfo.totalPages"
+          :maxVisibleButtons="5"
+          v-if="$page.entries.pageInfo.totalPages > 1"
+        />
+      </div>
     </div>
   </Layout>
 </template>
@@ -46,14 +55,14 @@ query($page:Int) {
 
 <script>
 import PostListItem from '~/components/PostListItem.vue'
+import Pagination from '~/components/Pagination.vue'
 import Hero from '~/components/Hero.vue'
 export default {
   metaInfo: {
     title: 'Import Data'
   },
   components: {
-    PostListItem,
-    Hero
+    PostListItem, Hero, Pagination
   }
 }
 </script>
