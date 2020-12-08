@@ -106,8 +106,14 @@ a {
   }
 }
 
-p {
-  margin: 0;
+.markdown-body {
+  * {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+h2 {
+  margin-top: 2.5rem !important;
 }
 
 .seperator {
