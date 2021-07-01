@@ -9,13 +9,14 @@ excerpt: The string "PAYPALISHIRING" is written in a zigzag pattern on a given n
 
 date: 2021-07-01
 
-image: ./images/leetcode.png
+image: ./images/leetcode.jpeg
 
 image_caption: leetcode
 
 author: author1
 
 ---
+## 題目
 
 The string `PAYPALISHIRING` is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
 
@@ -30,11 +31,13 @@ And then read line by line: "PAHNAPLSIIGYIR"
 Write the code that will take a string and make this conversion given a number of rows:
 
 string convert(string s, int numRows);
+## 思路
 
 題目要求將原文轉換為鋸齒狀排列，認真看範例的話可以找到規律，例如頭尾兩列每個字元的間隔都是 `numRows + numRows - 2`
 再來中間列的話則需要補上 `(numRos - i - 1) * 2` 的鋸齒字元，如此一來就可以填出答案的字串，
 最後再補上特殊條件判斷，當字串長度小於 3 以及 numRows 小於 2 時，是無法鋸齒排列的，直接回傳原字串即可。
 
+## Code
 ```javascript
 /**
  * @param {string} s
