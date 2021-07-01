@@ -1,13 +1,16 @@
 <template>
   <Layout>
     <div class="container">
+      <section class="post-image">
+        <g-image :src="$page.blog.image" alt="blog.image"></g-image>
+      </section>
       <div class="section-container">
         <section class="post-header">
-          <span class="post-category-title">
+          <div class="post-category-title mb-1">
             <g-link :to="$page.blog.category.path">
               {{ $page.blog.category.title }}
             </g-link>
-          </span>
+          </div>
           <h1 class="post-title">{{ $page.blog.title }}</h1>
           <div class="post-excerpt">{{ $page.blog.excerpt }}</div>
         </section>
@@ -23,23 +26,20 @@
               </div>
             </div>
             <div class="author-list-text">
-              <p>
+              <div class="mb-1">
                 <span v-for="(author, index) in $page.blog.author" :key="author.id">
                   <g-link :to="author.path">{{ author.name }}</g-link>
                   <span v-if="index < $page.blog.author.length - 1">, </span>
                 </span>
-              </p>
-              <p class="text-gray">
+              </div>
+              <div class="text-gray">
                 <time :datetime="$page.blog.datetime">{{ $page.blog.humanTime }}</time>
                 &nbsp;&middot;&nbsp; {{ $page.blog.timeToRead }} min read
-              </p>
+              </div>
             </div>
           </div>
         </section>
       </div>
-      <section class="post-image">
-        <g-image :src="$page.blog.image" alt="blog.image"></g-image>
-      </section>
       <div class="section-container">
         <section>
           <div class="post-content-text text-xl markdown-body" v-html="$page.blog.content"></div>

@@ -1,7 +1,7 @@
 ---
 title: "[LeetCode][Medium] 6. ZigZag Conversion"
 
-tags: LeetCode LeetCode-Medium
+tags: LeetCode, LeetCode-Medium
 
 category: Engineering
 

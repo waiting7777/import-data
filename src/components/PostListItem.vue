@@ -21,13 +21,13 @@
                 </div>
               </div>
             </div>
-            <div class="author-list-text">
-              <p>
+            <div class="author-list-text text-gray">
+              <div class="mb-1">
                 <time :datetime="record.datetime">{{ record.humanTime }}</time>
-              </p>
-              <p>
+              </div>
+              <div>
                 {{ record.timeToRead }} min
-              </p>
+              </div>
             </div>
           </div>
         </div>
