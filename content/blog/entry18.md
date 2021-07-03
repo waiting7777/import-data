@@ -7,7 +7,7 @@ category: Engineering
 
 excerpt: The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this (you may want to display this pattern in a fixed font for better legibility)
 
-date: 2021-07-01
+date: 2021-04-01
 
 image: ./images/leetcode.jpeg
 

@@ -7,7 +7,7 @@ category: Engineering
 
 excerpt: Given the head of a linked list, remove the nth node from the end of the list and return its head.
 
-date: 2021-07-02
+date: 2021-04-02
 
 image: ./images/leetcode.jpeg
 

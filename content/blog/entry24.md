@@ -7,7 +7,7 @@ category: Engineering
 
 excerpt: Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
 
-date: 2021-07-03
+date: 2021-04-03
 
 image: ./images/leetcode.jpeg
 

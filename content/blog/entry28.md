@@ -7,7 +7,7 @@ category: Engineering
 
 excerpt: Given two integers n and k, return all possible combinations of k numbers out of the range [1, n].
 
-date: 2021-07-04
+date: 2021-04-04
 
 image: ./images/leetcode.jpeg
 
