@@ -67,6 +67,21 @@
         </div>
         <div class="project-contain">
           <div class="card">
+            <g-link href="https://import-data.org/squzze" target="_blank" rel="noopener noreferrer">
+              <g-image src="/images/squeeze.jpg" alt="Joyso" />
+            </g-link>
+            <div class="project-content">
+              <div class="project-title">咪牌特效</div>
+              <p class="project-text">
+                單純用 CSS 刻出咪牌特效
+              </p>
+            </div>
+            <div class="project-tags">
+              <Tag text="Blockchain" color="purple" />
+              <Tag text="Vue" color="green" />
+            </div>
+          </div>
+          <div class="card">
             <g-link href="https://joyso.io/trade/en/markets/joy_eth" target="_blank" rel="noopener noreferrer">
               <g-image src="/images/joyso.png" alt="Joyso" />
             </g-link>
